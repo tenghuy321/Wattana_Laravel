@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nav;
 use App\Models\ContactUs;
-use App\Models\ProductCategory;
-use App\Models\ProductImage;
 use App\Models\ProductPage;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
 class ProductsController extends Controller
 {
@@ -14,6 +15,8 @@ class ProductsController extends Controller
     {
         $data['contact'] = ContactUs::first();
         $data['productTitle'] = ProductPage::first();
+        $data['nav'] = Nav::first();
+        $data['navItem'] = Nav::where('id', '!=', '1')->get();
         $data['product_category'] = ProductCategory::where('active', 1)->get();
 
         $defaultSlug = $data['product_category']->first()->slug ?? null;

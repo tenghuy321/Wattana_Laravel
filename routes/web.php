@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\HomePageController;
 use App\Http\Controllers\admin\MissionController;
 use App\Http\Controllers\admin\MsgController;
+use App\Http\Controllers\Admin\NavController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductPageController;
@@ -111,6 +112,9 @@ Route::middleware('auth')->group(function () {
     // Products
     Route::resource('product_image', ProductImageController::class)->except(['destroy', 'show']);
     Route::get('product_image/delete/{id}', [ProductImageController::class , 'delete'])->name('product_image.delete');
+
+    // nav
+    Route::resource('nav', NavController::class)->except(['destroy', 'show']);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

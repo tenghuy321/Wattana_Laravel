@@ -54,42 +54,48 @@
                             </a>
                         </li>
                         <li
-                            class="nav-link  {{ Request::is('homepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('homepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('homepage') }}">
                                 <i class="bx bx-home-alt icon"></i>
                                 <span class="text nav-text">Home Page</span>
                             </a>
                         </li>
                         <li
-                            class="nav-link  {{ Request::is('aboutpage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('aboutpage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('aboutpage') }}">
                                 <i class='bx bxs-user-detail icon'></i>
                                 <span class="text nav-text">About Page</span>
                             </a>
                         </li>
                         <li
-                            class="nav-link  {{ Request::is('servicepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('servicepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('servicepage') }}">
                                 <i class='bx bx-cog icon'></i>
                                 <span class="text nav-text">Service Page</span>
                             </a>
                         </li>
                         <li
-                            class="nav-link  {{ Request::is('product_category') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('product_category') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('product_category') }}">
                                 <i class='bx bx-category icon'></i>
                                 <span class="text nav-text">Product Category</span>
                             </a>
                         </li>
                         <li
-                            class="nav-link  {{ Request::is('productpage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('productpage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('productpage') }}">
                                 <i class='bx bx-list-ul icon'></i>
                                 <span class="text nav-text">Product Page</span>
                             </a>
                         </li>
+                        <li class="nav-link {{ Request::is('nav') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            <a href="{{ url('nav') }}">
+                                <i class='bx bx-navigation icon'></i>
+                                <span class="text nav-text">Navbar</span>
+                            </a>
+                        </li>
                         <li
-                            class="nav-link  {{ Request::is('contactUs') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                            class="nav-link {{ Request::is('contactUs') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('contactUs') }}">
                                 <i class='bx bxs-contact icon'></i>
                                 <span class="text nav-text">Contact Page</span>

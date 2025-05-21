@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nav;
 use App\Models\ContactUs;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,16 @@ class CustomizationController extends Controller
     public function index()
     {
         $data['contact'] = ContactUs::first();
-
+        $data['nav'] = Nav::first();
+        $data['navItem'] = Nav::where('id', '!=', '1')->get();
         return view('customization', $data);
     }
 
     public function show($slug)
     {
+        $data['contact'] = ContactUs::first();
+        $data['nav'] = Nav::first();
+        $data['navItem'] = Nav::where('id', '!=', '1')->get();
         $roomImages = [
             'Living Room Space' => [
                 [
@@ -498,6 +503,6 @@ class CustomizationController extends Controller
             abort(404);
         }
 
-        return view('customization.show', $imageData);
+        return view('customization.show', $imageData,$data);
     }
 }

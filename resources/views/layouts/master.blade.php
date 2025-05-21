@@ -82,8 +82,8 @@
 
 <body style="font-family: 'Kantumruy Pro', sans-serif;">
 
-    <x-header :contact="$contact" />
-    <x-navbar />
+    <x-header :contact="$contact" :navItem="$navItem" />
+    <x-navbar :nav="$nav" :navItem="$navItem" />
 
     @yield('content')
 

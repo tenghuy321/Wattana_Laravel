@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Nav;
 use App\Models\HomePage;
 use App\Models\ContactUs;
 use App\Models\HeroBanner;
@@ -14,6 +15,8 @@ class HomeController extends Controller
         $heroBanner = HeroBanner::orderBy('order')->get();
 
         $contact = ContactUs::first();
-        return view('home', compact('homes','heroBanner', 'contact'));
+        $nav = Nav::first();
+        $navItem = Nav::where('id', '!=', '1')->get();
+        return view('home', compact('homes','heroBanner', 'contact', 'nav', 'navItem'));
     }
 }

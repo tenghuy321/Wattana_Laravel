@@ -1,4 +1,4 @@
-@props(['contact'])
+@props(['contact', 'navItem'])
 <section x-data="{ open: false }">
     <header
         class="absolute left-1/2 -translate-x-1/2 w-full flex items-center justify-between h-[3rem] lg:h-[2rem] px-4 max-w-7xl mx-auto bg-white lg:rounded-bl-[20px] lg:rounded-br-[20px] z-[999]">
@@ -131,42 +131,14 @@
         </button>
 
         <ul class="text-[16px] space-y-4 text-center w-[80%] md:w-1/2 mx-auto mt-12">
-            <li>
-                <a href="{{ route('home') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('home') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.home') }}
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('about') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('about*') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.about_us') }}
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('our_products') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('our_products') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.products') }}
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('service') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('service*') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.services') }}
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('customization') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('customization') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.customization') }}
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('contact') }}"
-                    class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs('contact') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
-                    {{ __('messages.contact_us') }}
-                </a>
-            </li>
+            @foreach ($navItem as $item)
+                <li>
+                    <a href="{{ route($item->link) }}"
+                        class="block py-2 cursor-pointer transition rounded-full {{ request()->routeIs($item->link . '*') ? 'bg-[#FF3217] text-white font-[500] tracking-wider' : '' }}">
+                        {{ $item->title[app()->getLocale()] }}
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </div>
 </section>
