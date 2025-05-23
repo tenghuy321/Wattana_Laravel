@@ -18,13 +18,14 @@
 
 @section('content')
     <x-loading />
-    <div class='min-h-screen relative'>
+    {{-- <div class='min-h-screen relative'>
         <div class="absolute top-0 left-0 w-full h-full">
             <div class="swiper homeSwiper">
                 <div class="swiper-wrapper h-full">
                     @foreach ($heroBanner as $item)
                         <div class="swiper-slide">
-                            <img src="{{ asset($item->image) }}" alt="" class="w-full h-full object-cover" loading="eager">
+                            <img src="{{ asset($item->image) }}" alt="" class="w-full h-full object-cover"
+                                loading="eager">
                         </div>
                     @endforeach
                 </div>
@@ -32,7 +33,8 @@
         </div>
 
         <div class='relative z-20 pb-[2rem]'>
-            <div class='w-full text-[50px] sm:text-[70px] lg:text-[100px] font-[700]'>
+            <div
+                class='w-full text-[50px] sm:text-[70px] lg:text-[100px] font-[700] flex flex-col items-center justify-center'>
                 <div class='flex flex-col items-center pt-32 md:pt-44'>
                     <h1 class='leading-none text-[#FF3217] uppercase' data-aos="zoom-in-up" data-aos-duration="1200">
                         {{ $homes->title[app()->getLocale()] }}</h1>
@@ -51,6 +53,34 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <div class='min-h-screen relative'>
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="swiper homeSwiper">
+                <div class="swiper-wrapper h-full">
+                    @foreach ($heroBanner as $item)
+                        <div class="swiper-slide">
+                            <img src="{{ asset($item->image) }}" alt="" class="w-full h-full object-cover"
+                                loading="eager">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        <div class='relative z-20 h-screen w-full flex items-center justify-center'>
+            <div class='text-center px-4'>
+                <h1 class='text-[50px] sm:text-[70px] lg:text-[100px] font-[700] leading-none text-[#FF3217] uppercase'
+                    data-aos="zoom-in-up" data-aos-duration="1200">
+                    {{ $homes->title[app()->getLocale()] }}
+                </h1>
+                <p class='text-[20px] sm:text-[30px] lg:text-[40px] text-[#000] uppercase mt-4 font-[500]' data-aos="zoom-in-up"
+                    data-aos-duration="1500">
+                    {{ $homes->sub_title[app()->getLocale()] }}
+                </p>
             </div>
         </div>
     </div>

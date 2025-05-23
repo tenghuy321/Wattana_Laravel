@@ -52,7 +52,7 @@
             bottom: 0px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #FF3217;
+            background-color: #000;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
         }
@@ -65,7 +65,7 @@
             bottom: 0px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #FF3217;
+            background-color: #000;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
             transition: all 0.5s;

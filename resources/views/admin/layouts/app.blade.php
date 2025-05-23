@@ -74,8 +74,7 @@
                                 <span class="text nav-text">Service Page</span>
                             </a>
                         </li>
-                        <li
-                            class="nav-link {{ Request::is('product_category') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                        <li class="nav-link {{ Request::is('product_category') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('product_category') }}">
                                 <i class='bx bx-category icon'></i>
                                 <span class="text nav-text">Product Category</span>

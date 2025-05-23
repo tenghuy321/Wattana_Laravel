@@ -8,8 +8,8 @@
     </div>
 
     {{-- Navigation Menu --}}
-    <div class="w-full bg-white rounded-full px-10 xl:px-12 py-4 xl:py-5 shadow-md">
-        <ul class="flex items-center justify-between gap-4 xl:gap-10 text-[#1E1E1E]">
+    <div class="w-full bg-[#FF3217] rounded-full px-10 xl:px-12 py-4 xl:py-5 shadow-md">
+        <ul class="flex items-center justify-around gap-4 xl:gap-10 text-[#fff]">
             @foreach ($navItem as $item)
                 <li>
                     <a href="{{ route($item->link) }}"
