@@ -12,7 +12,7 @@ class CustomizationController extends Controller
     {
         $data['contact'] = ContactUs::first();
         $data['nav'] = Nav::first();
-        $data['navItem'] = Nav::where('id', '!=', '1')->get();
+        $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('customization', $data);
     }
 
@@ -20,7 +20,7 @@ class CustomizationController extends Controller
     {
         $data['contact'] = ContactUs::first();
         $data['nav'] = Nav::first();
-        $data['navItem'] = Nav::where('id', '!=', '1')->get();
+        $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
         $roomImages = [
             'Living Room Space' => [
                 [

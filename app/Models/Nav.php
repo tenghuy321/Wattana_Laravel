@@ -12,7 +12,8 @@ class Nav extends Model
 
     protected $fillable = [
         'image',
-        'title'
+        'title',
+        'order',
     ];
 
     protected $casts = [

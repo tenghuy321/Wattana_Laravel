@@ -115,6 +115,7 @@ Route::middleware('auth')->group(function () {
 
     // nav
     Route::resource('nav', NavController::class)->except(['destroy', 'show']);
+    Route::post('/nav/reorder', [NavController::class, 'reorder'])->name('nav.reorder');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

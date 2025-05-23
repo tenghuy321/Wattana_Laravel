@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function index(){
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('contact', compact('contact', 'nav', 'navItem'));
     }
 }

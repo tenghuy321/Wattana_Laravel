@@ -16,7 +16,7 @@ class ServiceController extends Controller
         $services = ServicePage::get();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('service', compact('services', 'nav', 'navItem', 'contact'));
     }
 
@@ -25,7 +25,7 @@ class ServiceController extends Controller
         $sub_service = SubServicePage::get();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('services.ourService', compact('services', 'nav', 'navItem', 'sub_service', 'contact'));
     }
 
@@ -34,7 +34,7 @@ class ServiceController extends Controller
         $why_us = WhyUs::orderBy('order')->get();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('services.whyUs', compact('services', 'nav', 'navItem', 'why_us', 'contact'));
     }
 
@@ -43,7 +43,7 @@ class ServiceController extends Controller
         $registration = Registration::orderBy('order')->get();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('services.registration', compact('services', 'nav', 'navItem', 'registration', 'contact'));
     }
 

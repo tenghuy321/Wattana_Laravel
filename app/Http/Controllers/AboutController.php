@@ -20,7 +20,7 @@ class AboutController extends Controller
 
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
 
         return view('about', compact('aboutTitle', 'contact', 'aboutpage', 'nav', 'navItem'));
     }
@@ -33,7 +33,7 @@ class AboutController extends Controller
         $vision = Vision::first();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('abouts.vision', compact('aboutTitle', 'contact', 'aboutpage', 'nav', 'navItem', 'vision'));
     }
 
@@ -45,7 +45,7 @@ class AboutController extends Controller
         $mission = Mission::first();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('abouts.mission', compact('aboutTitle', 'contact', 'aboutpage', 'nav', 'navItem', 'mission'));
     }
 
@@ -57,7 +57,7 @@ class AboutController extends Controller
         $core_values = CoreValue::orderBy('order')->get();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('abouts.coreValues', compact('aboutTitle', 'contact', 'aboutpage', 'nav', 'navItem', 'core_values'));
     }
 
@@ -69,7 +69,7 @@ class AboutController extends Controller
         $msg = Msg::first();
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('abouts.msg', compact('aboutTitle', 'contact', 'aboutpage', 'nav', 'navItem', 'msg'));
     }
 }

@@ -3,7 +3,7 @@
     Navbar
 @endsection
 @section('content')
-    <div class="">
+    <div class="" x-data="reorderTable()" x-init="initSortable()">
         {{-- <div class="my-3 md:my-4 px-2 md:px-4 text-end">
             <a href="{{ route('nav.create') }}"
                 class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
@@ -25,10 +25,12 @@
                             <th class="text-left py-3 px-4 text-xs w-[200px]">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="text-gray-700">
+                    <tbody x-ref="tableBody" class="text-gray-700">
                         @foreach ($nav as $index => $item)
-                            <tr class="border-t border-[#FF3217]">
-                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $index + 1 }}</td>
+                            <tr class="border-t border-[#FF3217] cursor-move" draggable="true" x-bind:data-id="{{ $item->id }}"
+                                @dragstart="dragStart($event, {{ $item->id }})" @dragover.prevent
+                                @drop="drop($event, {{ $item->id }})">
+                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $item->order }}</td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     @if (!empty($item->image))
                                         <img src="{{ asset($item->image) }}" alt="" class="w-20 h-10">
@@ -61,4 +63,44 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        function reorderTable() {
+            return {
+                initSortable() {
+                    this.$nextTick(() => {
+                        let tableBody = this.$refs.tableBody;
+                        new Sortable(tableBody, {
+                            animation: 150,
+                            ghostClass: "bg-gray-100",
+                            onEnd: async (event) => {
+                                let newOrder = [...tableBody.children].map((row, index) => ({
+                                    id: row.getAttribute("data-id"),
+                                    order: index + 1
+                                }));
+
+                                let response = await fetch("{{ route('nav.reorder') }}", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                                    },
+                                    body: JSON.stringify({
+                                        newOrder
+                                    })
+                                });
+
+                                if (response.ok) {
+                                    location.reload();
+                                } else {
+                                    console.error("Failed to reorder.");
+                                }
+                            }
+                        });
+                    });
+                }
+            };
+        }
+    </script>
 @endsection

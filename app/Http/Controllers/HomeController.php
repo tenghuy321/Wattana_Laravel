@@ -16,7 +16,7 @@ class HomeController extends Controller
 
         $contact = ContactUs::first();
         $nav = Nav::first();
-        $navItem = Nav::where('id', '!=', '1')->get();
+        $navItem = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('home', compact('homes','heroBanner', 'contact', 'nav', 'navItem'));
     }
 }

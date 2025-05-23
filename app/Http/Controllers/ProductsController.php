@@ -16,7 +16,7 @@ class ProductsController extends Controller
         $data['contact'] = ContactUs::first();
         $data['productTitle'] = ProductPage::first();
         $data['nav'] = Nav::first();
-        $data['navItem'] = Nav::where('id', '!=', '1')->get();
+        $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
         // $data['product_category'] = ProductCategory::where('active', 1)->get();
 
         // $defaultSlug = $data['product_category']->first()->slug ?? null;

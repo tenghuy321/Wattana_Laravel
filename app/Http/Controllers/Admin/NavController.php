@@ -11,7 +11,7 @@ class NavController extends Controller
 {
     public function index()
     {
-        $nav = Nav::get();
+        $nav = Nav::orderBy('order')->get();
         return view('admin.nav.index', compact('nav'));
     }
 
@@ -38,6 +38,9 @@ class NavController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('navImage', 'custom');
         }
+
+        $data['order'] = Nav::max('order') + 1;
+
 
         $i = Nav::create($data);
 
@@ -68,8 +71,8 @@ class NavController extends Controller
             ]
         ];
 
-        if($request->hasFile('image')){
-            if($navbar->image && Storage::disk('custom')->exists($navbar->image)){
+        if ($request->hasFile('image')) {
+            if ($navbar->image && Storage::disk('custom')->exists($navbar->image)) {
                 Storage::disk('custom')->delete($navbar->image);
             }
 
@@ -81,5 +84,16 @@ class NavController extends Controller
         return $i
             ? redirect()->route('nav.index')->with('success', 'Navbar has been updated')
             : redirect()->back()->with('error', 'Fail to updated');
+    }
+
+    public function reorder(Request $request)
+    {
+        $newOrder = $request->newOrder;
+
+        foreach ($newOrder as $item) {
+            Nav::where('id', $item['id'])->update(['order' => $item['order']]);
+        }
+
+        return response()->json(['success' => true]);
     }
 }
