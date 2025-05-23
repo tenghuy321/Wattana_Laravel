@@ -78,6 +78,54 @@
         </div>
     </div>
 
+
+    <div class="w-full h-full sm:h-[40%] lg:h-[30%] text-[12px] text-[#000] my-10 xl:my-4">
+        <h1 data-aos="fade-up" data-aos-duration="1200" class="text-center text-[18px] text-[#FF3217] pt-6 lg:pt-2">
+            {{ __("messages.ProductsUniquesSellingPoints") }}
+        </h1>
+        <div class="w-full max-w-5xl mx-auto flex items-center justify-center flex-wrap mt-5">
+            <div class="flex flex-wrap">
+                <div class="w-1/2 md:w-1/4 p-4 text-center" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">01</h1>
+                    <p>{{ __("messages.CompatibleForEverySeason") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/4 p-4 text-center" data-aos="fade-up" data-aos-duration="1400">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">02</h1>
+                    <p>{{ __("messages.Customisable") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/4 p-4 text-center" data-aos="fade-up" data-aos-duration="1600">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">03</h1>
+                    <p>{{ __("messages.FasterLeadTime") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/4 p-4 text-center" data-aos="fade-up" data-aos-duration="1800">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">04</h1>
+                    <p>{{ __("messages.NoTermiteControl") }}</p>
+                </div>
+
+                <div class="w-1/2 md:w-1/5 p-4 text-center" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">05</h1>
+                    <p>{{ __("messages.OdorlessNoSprayNoBrainAffect") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/5 p-4 text-center" data-aos="fade-up" data-aos-duration="1400">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">06</h1>
+                    <p>{{ __("messages.EasyTowashNonDecay") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/5 p-4 text-center" data-aos="fade-up" data-aos-duration="1600">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">07</h1>
+                    <p>{{ __("messages.NonFlammable") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/5 p-4 text-center" data-aos="fade-up" data-aos-duration="1800">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">08</h1>
+                    <p>{{ __("messages.Recyclable") }}</p>
+                </div>
+                <div class="w-1/2 md:w-1/5 p-4 text-center mb-10" data-aos="fade-up" data-aos-duration="2000">
+                    <h1 class="text-[14px] text-[#FF3217] font-[700]">09</h1>
+                    <p>{{ __("messages.Lightweight") }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox Modal -->
     <div id="lightbox-modal"
         class="fixed inset-0 bg-black/0 flex items-center justify-center px-2 z-[999] opacity-0 pointer-events-none transition-all duration-300">
@@ -116,6 +164,10 @@
                 src="" />
         </div>
     </div>
+
+
+
+
 
     <style>
         /* Animation for lightbox */
