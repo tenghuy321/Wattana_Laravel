@@ -24,7 +24,7 @@
                     <span>{{ $contact->email }}</span>
                 </a>
 
-                <img src={{ asset($contact->image) }} alt="" class='w-32 h-auto' />
+                <img src={{ asset($contact->image) }} alt="" class='w-40 h-auto' />
             </div>
 
             <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700]'>
