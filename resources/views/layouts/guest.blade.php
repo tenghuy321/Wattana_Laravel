@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Wattana | Login</title>
-    <link rel="icon" href="{{ asset('assets/images/logo-new.png') }}">
+    <link rel="icon" href="{{ asset('assets/images/logo1.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />

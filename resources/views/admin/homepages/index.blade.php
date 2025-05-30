@@ -22,8 +22,6 @@
                             <th class="text-left py-3 px-4 text-xs w-8 border-r border-[#FF3217]">#</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Title</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Sub Title</th>
-                            <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Header</th>
-                            <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Body</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px]">Actions</th>
                         </tr>
                     </thead>
@@ -42,22 +40,6 @@
                                     <div class="flex flex-col truncate">
                                         <p>{{ $home->sub_title['en'] ?? '' }}</p>
                                         <p>{{ $home->sub_title['kh'] ?? '' }}</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
-                                    <div class="flex flex-col truncate">
-                                        <p>{{ $home->header['en'] ?? '' }}</p>
-                                        <p>{{ $home->header['kh'] ?? '' }}</p>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
-                                    <div class="flex flex-col">
-                                        <div class="line-clamp-1">
-                                            {!! $home->body['en'] ?? '' !!}
-                                        </div>
-                                        <div class="line-clamp-1">
-                                            {!! $home->body['kh'] ?? '' !!}
-                                        </div>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-xs flex max-w-[200px]">

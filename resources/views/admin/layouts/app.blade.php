@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1">
     <title>Wattana | Dashboard</title>
-    <link rel="icon" href="{{ asset('assets/images/logo-new.png') }}">
+    <link rel="icon" href="{{ asset('assets/images/logo1.png') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ckeditor.css') }}">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -29,7 +30,7 @@
             <header>
                 <div class="image-text">
                     <span class="image">
-                        <img src="{{ asset('assets/images/logo-new.png') }}" alt="">
+                        <img src="{{ asset('assets/images/logo1.png') }}" alt="">
                     </span>
 
                     <div class="text header-text">

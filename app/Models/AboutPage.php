@@ -13,7 +13,6 @@ class AboutPage extends Model
     protected $fillable = [
         'title',
         'content',
-        'icon'
     ];
 
     protected $casts = [

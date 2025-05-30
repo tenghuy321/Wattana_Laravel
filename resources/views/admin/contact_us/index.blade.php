@@ -38,7 +38,7 @@
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $index + 1 }}
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
-                                    <img src="{{ asset($contact->image) }}" alt="" class="w-20 h-12 object-cover">
+                                    <img src="{{ asset($contact->image) }}" alt="" class="w-20 h-auto object-cover">
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col truncate">

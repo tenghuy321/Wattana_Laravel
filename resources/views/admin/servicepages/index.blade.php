@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('header')
-    About Page
+    Service Page
 @endsection
 @section('content')
     <div class="">
@@ -20,7 +20,6 @@
                     <thead class="text-black sticky top-0 z-10">
                         <tr>
                             <th class="text-left py-3 px-4 text-xs w-8 border-r border-[#FF3217]">#</th>
-                            <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Icon</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Title</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px]">Actions</th>
                         </tr>
@@ -29,9 +28,6 @@
                         @foreach ($servicepages as $index => $service)
                             <tr class="border-t border-[#FF3217]">
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $index + 1 }}
-                                </td>
-                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217] bg-gray-300">
-                                    <img src="{{ asset($service->icon) }}" alt="" class="w-10 h-10">
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col truncate">
@@ -68,8 +64,21 @@
                                             </svg>
                                         </a>
 
-                                        <a class="@if ($service->id !== 3) hidden @endif"
-                                            href={{ route('registration.index') }}>
+                                        <a class="@if ($service->id !== 4) hidden @endif"
+                                            href={{ route('client.index') }}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                                stroke="#FF3217" stroke-linecap="round" stroke-linejoin="round"
+                                                width="24" height="24" stroke-width="1.5">
+                                                <path d="M9 6h11"></path>
+                                                <path d="M12 12h8"></path>
+                                                <path d="M15 18h5"></path>
+                                                <path d="M5 6v.01"></path>
+                                                <path d="M8 12v.01"></path>
+                                                <path d="M11 18v.01"></path>
+                                            </svg>
+                                        </a>
+                                        <a class="@if ($service->id !== 5) hidden @endif"
+                                            href={{ route('product_unique.index') }}>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                                 stroke="#FF3217" stroke-linecap="round" stroke-linejoin="round"
                                                 width="24" height="24" stroke-width="1.5">

@@ -35,10 +35,10 @@
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col">
-                                        <div class="line-clamp-1">
+                                        <div class="prose line-clamp-1">
                                             {!! $productpage->content['en'] ?? '' !!}
                                         </div>
-                                        <div class="line-clamp-1">
+                                        <div class="prose line-clamp-1">
                                             {!! $productpage->content['kh'] ?? '' !!}
                                         </div>
                                     </div>

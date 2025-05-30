@@ -104,12 +104,12 @@ class ContactUsController extends Controller
         ];
 
 
-        if ($request->hasFile('icon')) {
-            if ($contact->icon && Storage::disk('custom')->exists($contact->icon)) {
-                Storage::disk('custom')->delete($contact->icon);
+        if ($request->hasFile('image')) {
+            if ($contact->image && Storage::disk('custom')->exists($contact->image)) {
+                Storage::disk('custom')->delete($contact->image);
             }
 
-            $data['icon'] = $request->file('icon')->store('contact_us', 'custom');
+            $data['image'] = $request->file('image')->store('contact_us', 'custom');
         }
 
         $i = $contact->update($data);

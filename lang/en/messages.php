@@ -6,6 +6,7 @@ return [
     "services" => "Services",
     "customization" => "Customization",
     "contact_us" => "Contact Us",
+    "all" => "All",
 
     "home_title_1" => "Transforming Aluminum into Stylish, Durable, and Practical Everyday Products for Modern Living",
     "home_body_1" => "We specialize in designing and crafting high-quality aluminum products, transforming this versatile material into beautiful furniture and daily-use essentials. Our designs combine modern aesthetics with practicality, making each product not just a functional item, but a statement of elegance and durability.",

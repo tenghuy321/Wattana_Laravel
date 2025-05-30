@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
-        <h2 class="text-2xl font-bold">Add About Page</h2>
-        <form action="{{ route('aboutpage.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <h2 class="text-2xl font-bold">Add Product Unique</h2>
+        <form action="{{ route('product_unique.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
             @component('admin.components.alert')
             @endcomponent
@@ -14,13 +14,6 @@
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                         <x-input-error class="mt-2" :messages="$errors->get('title.en')" />
                     </div>
-                    <div>
-                        <label for="content_en" class="block text-sm font-medium text-gray-700">Content</label>
-                        <textarea name="content[en]" id="content_en" rows="4"
-                            class="mt-1 block w-full p-2 border rounded-md text-green-900 text-sm">{{ old('content.en') }}</textarea>
-                        <x-input-error class="mt-2" :messages="$errors->get('content.en')" />
-                    </div>
-
                 </div>
 
                 <div class="p-0 space-y-4">
@@ -31,17 +24,11 @@
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                         <x-input-error class="mt-2" :messages="$errors->get('title.kh')" />
                     </div>
-                    <div>
-                        <label for="content_kh" class="block text-sm font-medium text-gray-700">Content</label>
-                        <textarea name="content[kh]" id="content_kh" rows="4"
-                            class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">{{ old('content.kh') }}</textarea>
-                        <x-input-error class="mt-2" :messages="$errors->get('content.kh')" />
-                    </div>
                 </div>
             </div>
 
             <div class="flex justify-between w-full">
-                <a href="{{ route('aboutpage.index') }}"
+                <a href="{{ route('product_unique.index') }}"
                     class="border border-[#FF3217] hover:!bg-[#FF3217] hover:!text-[#ffffff] px-4 py-1 md:px-6 rounded-[5px] text-[#FF3217]">
                     Back
                 </a>
@@ -50,18 +37,4 @@
             </div>
         </form>
     </div>
-
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content_en'))
-            .catch(error => {
-                console.error(error);
-            });
-
-        ClassicEditor
-            .create(document.querySelector('#content_kh'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
 </x-app-layout>

@@ -30,10 +30,6 @@ class ServicePageController extends Controller
             ],
         ];
 
-        if ($request->hasFile('icon')) {
-            $data['icon'] = $request->file('icon')->store('servicepages', 'custom');
-        }
-
         $i = ServicePage::create($data);
 
         return $i
@@ -56,14 +52,6 @@ class ServicePageController extends Controller
                 'kh' => $request->input('title.kh', ''),
             ],
         ];
-
-        if($request->hasFile('icon')){
-            if($servicepage->icon && Storage::disk('custom')->exists($servicepage->icon)){
-                Storage::disk('custom')->delete($servicepage->icon);
-            }
-
-            $data['icon'] = $request->file('icon')->store('servicepages', 'custom');
-        }
 
         $i = $servicepage->update($data);
 

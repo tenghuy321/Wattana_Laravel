@@ -23,7 +23,6 @@ class NavController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'image' => 'nullable|image',
             'title.en' => 'nullable|string',
             'title.kh' => 'nullable|string',
         ]);
@@ -59,17 +58,17 @@ class NavController extends Controller
     {
         $navbar = Nav::findOrFail($id);
         $validated = $request->validate([
-            'image' => 'nullable|image',
             'title.en' => 'nullable|string',
             'title.kh' => 'nullable|string'
         ]);
 
         $data = [
             'title' => [
-                'en' => $validated['title']['en'],
-                'kh' => $validated['title']['kh']
+                'en' => isset($validated['title']['en']) ? $validated['title']['en'] : null,
+                'kh' => isset($validated['title']['kh']) ? $validated['title']['kh'] : null
             ]
         ];
+
 
         if ($request->hasFile('image')) {
             if ($navbar->image && Storage::disk('custom')->exists($navbar->image)) {

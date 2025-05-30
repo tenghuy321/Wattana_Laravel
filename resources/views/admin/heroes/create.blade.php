@@ -35,7 +35,7 @@
                 </a>
 
                 <button type="submit"
-                    class="bg-[#FF3217] text-white px-4 py-1 md:px-6 rounded-[5px] hover:!text-[#415464]">Submit</button>
+                    class="bg-[#FF3217] text-white px-4 py-1 md:px-6 rounded-[5px]">Submit</button>
             </div>
         </form>
     </div>

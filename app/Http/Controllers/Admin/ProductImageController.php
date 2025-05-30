@@ -39,24 +39,21 @@ class ProductImageController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:5120',
         ]);
 
-        // Exclude non-database fields
         $data = $request->except('_token', 'images');
 
         $category = ProductCategory::findOrFail($data['product_category_id']);
-        // For folder name, use slug or sanitized name, here I assume 'name' is an array with 'en'
         $folderName = strtolower(str_replace(' ', '_', $category->name['en'] ?? 'category'));
 
         $imagePaths = [];
 
         foreach ($request->file('images') as $imageFile) {
-            // Store images in folder named after category inside 'uploads/products'
             $path = $imageFile->store("products/{$folderName}", 'custom');
             $imagePaths[] = $path;
         }
 
         ProductImage::create([
             'product_category_id' => $data['product_category_id'],
-            'image' => json_encode($imagePaths), // Save as JSON string
+            'image' => json_encode($imagePaths), 
         ]);
 
         return redirect()->route('product_image.index')

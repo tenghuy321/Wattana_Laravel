@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6 my-2">
-        <h2 class="text-2xl font-bold">Edit Hero Banner</h2>
-        <form action="{{ route('hero_banner.update', $hero->id) }}" method="POST" enctype="multipart/form-data"
+        <h2 class="text-2xl font-bold">Edit Client Image</h2>
+        <form action="{{ route('client.update', $client->id) }}" method="POST" enctype="multipart/form-data"
             class="space-y-4">
             @csrf
             @method('PATCH')
@@ -9,10 +9,10 @@
             @endcomponent
             <!-- Dropzone for Image -->
             <div>
-                <label for="dropzone-file{{ $hero->id }}" id="drop-area"
+                <label for="dropzone-file{{ $client->id }}" id="drop-area"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6 w-full h-full bg-contain bg-center bg-no-repeat rounded-md text-center"
-                        id="img-preview" style="background-image: url({{ asset($hero->image) }})">
+                        id="img-preview" style="background-image: url({{ asset($client->image) }})">
                         <svg class="w-8 h-8 mb-4 text-[#000]" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -23,14 +23,14 @@
                                 class="font-semibold">Click to upload</span> or drag and drop</p>
                         <p class="text-xs text-[#000]">SVG, PNG, JPG or GIF (MAX. 5MB)</p>
                     </div>
-                    <input id="dropzone-file{{ $hero->id }}" type="file" class="hidden" name="image" accept="image/*"
+                    <input id="dropzone-file{{ $client->id }}" type="file" class="hidden" name="image" accept="image/*"
                         onchange="uploadImage(event)" />
                 </label>
                 <x-input-error class="mt-2" :messages="$errors->get('image')" />
             </div>
 
             <div class="flex justify-between">
-                <a href="{{ route('hero_banner.index') }}"
+                <a href="{{ route('client.index') }}"
                     class="border border-[#FF3217] hover:!bg-[#FF3217] hover:!text-[#ffffff] px-4 py-1 md:px-6 rounded-[5px] text-[#FF3217]">
                     Back
                 </a>
