@@ -103,11 +103,11 @@
 
         <div class="relative z-20 h-full w-full flex items-center md:items-start justify-center pt-0 md:pt-[4rem]">
             <div class="text-center px-4">
-                <h1 class="text-[50px] sm:text-[70px] lg:text-[100px] font-[700] leading-none text-[#FF3217] uppercase"
+                <h1 class="text-[50px] sm:text-[70px] xl:text-[100px] font-[700] leading-none text-[#FF3217] uppercase"
                     data-aos="zoom-in-up" data-aos-duration="1200">
                     {{ $homes->title[app()->getLocale()] }}
                 </h1>
-                <p class="text-[20px] sm:text-[30px] lg:text-[40px] text-[#000] uppercase mt-2 font-[600] leading-none"
+                <p class="text-[20px] sm:text-[30px] xl:text-[40px] text-[#000] uppercase mt-2 font-[600] leading-none"
                     data-aos="zoom-in-up" data-aos-duration="1500">
                     {{ $homes->sub_title[app()->getLocale()] }}
                 </p>
