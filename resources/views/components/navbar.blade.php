@@ -76,7 +76,7 @@
 
     <!-- drawer component -->
     <div id="drawer-example"
-        class="fixed top-0 left-0 z-[900] h-screen overflow-y-auto transition-transform -translate-x-full bg-white w-80"
+        class="fixed top-0 left-0 h-screen overflow-y-auto transition-transform -translate-x-full bg-white w-80 z-[9999]"
         tabindex="-1" aria-labelledby="drawer-label">
         <div class="p-4">
             <button type="button" data-drawer-hide="drawer-example" aria-controls="drawer-example"
@@ -93,41 +93,14 @@
         <hr class="border border-t-1 border-[#FF3217]">
 
         <ul class="flex flex-col w-full items-start gap-4 xl:gap-10 p-4">
-            <li>
-                <a href="#home" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="#about-us" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    About Us
-                </a>
-            </li>
-            <li>
-                <a href="#products" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Product
-                </a>
-            </li>
-            <li>
-                <a href="#services" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Services
-                </a>
-            </li>
-            <li>
-                <a href="#why_us" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Why Us
-                </a>
-            </li>
-            <li>
-                <a href="#our_clients" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Our Clients
-                </a>
-            </li>
-            <li>
-                <a href="#contact" class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                    Contact
-                </a>
-            </li>
+            @foreach ($navItem as $item)
+                <li>
+                    <a href="#{{ Str::slug($item->title['en']) }}"
+                        class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
+                        {{ $item->title[app()->getLocale()] }}
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </div>
 

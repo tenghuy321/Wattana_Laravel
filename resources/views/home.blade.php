@@ -73,7 +73,7 @@
         </div>
     </div> --}}
 
-    <section id="{{ Str::slug($id_home->title['en']) }}" class="w-full h-[60vh] md:h-[85vh] relative mt-[4rem] md:mt-[5rem]">
+    <section id="{{ Str::slug($id_home->title['en']) }}" class="w-full h-[60vh] md:h-[85vh] relative mt-[4rem] md:mt-[5rem] z-10">
         <div class="absolute top-0 left-0 w-full h-full">
             <div class="swiper homeSwiper h-full">
                 <div class="swiper-wrapper h-full">
