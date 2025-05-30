@@ -21,12 +21,6 @@
                         <x-input-error class="mt-2" :messages="$errors->get('sub_title.en')" />
                     </div>
                     <div>
-                        <label for="header_en" class="block text-sm font-medium text-gray-700">Header</label>
-                        <input value="{{ old('header.en') }}" type="text" name="header[en]" id="header_en"
-                            class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
-                        <x-input-error class="mt-2" :messages="$errors->get('header.en')" />
-                    </div>
-                    <div>
                         <label for="body_en" class="block text-sm font-medium text-gray-700">Body</label>
                         <textarea name="body[en]" id="body_en" rows="4"
                             class="mt-1 block w-full p-2 border rounded-md text-green-900 text-sm">{{ old('body.en') }}</textarea>
@@ -48,12 +42,6 @@
                         <input value="{{ old('sub_title.kh') }}" type="text" name="sub_title[kh]" id="sub_title_kh"
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                         <x-input-error class="mt-2" :messages="$errors->get('sub_title.kh')" />
-                    </div>
-                    <div>
-                        <label for="header_kh" class="block text-sm font-medium text-gray-700">Header</label>
-                        <input value="{{ old('header.kh') }}" type="text" name="header[kh]" id="header_kh"
-                            class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
-                        <x-input-error class="mt-2" :messages="$errors->get('header.kh')" />
                     </div>
                     <div>
                         <label for="body_kh" class="block text-sm font-medium text-gray-700">Body</label>
