@@ -75,7 +75,7 @@
                 </a>
             </div>
 
-            <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700] pb-20 xl:pb-0'>
+            <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700]'>
                 <h1 class='pt-10'>{{ $contact->title3[app()->getLocale()] }}</h1>
 
                 <div class='flex items-center space-x-4'>
