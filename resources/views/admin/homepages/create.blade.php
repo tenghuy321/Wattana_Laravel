@@ -20,12 +20,12 @@
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                         <x-input-error class="mt-2" :messages="$errors->get('sub_title.en')" />
                     </div>
-                    <div>
+                    {{-- <div>
                         <label for="body_en" class="block text-sm font-medium text-gray-700">Body</label>
                         <textarea name="body[en]" id="body_en" rows="4"
                             class="mt-1 block w-full p-2 border rounded-md text-green-900 text-sm">{{ old('body.en') }}</textarea>
                         <x-input-error class="mt-2" :messages="$errors->get('body.en')" />
-                    </div>
+                    </div> --}}
 
                 </div>
 
@@ -43,12 +43,12 @@
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
                         <x-input-error class="mt-2" :messages="$errors->get('sub_title.kh')" />
                     </div>
-                    <div>
+                    {{-- <div>
                         <label for="body_kh" class="block text-sm font-medium text-gray-700">Body</label>
                         <textarea name="body[kh]" id="body_kh" rows="4"
                             class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">{{ old('body.kh') }}</textarea>
                         <x-input-error class="mt-2" :messages="$errors->get('body.kh')" />
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
