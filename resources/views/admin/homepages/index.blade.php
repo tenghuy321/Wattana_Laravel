@@ -4,12 +4,12 @@
 @endsection
 @section('content')
     <div class="">
-        <div class="my-3 md:my-4 px-2 md:px-4 text-end">
+        {{-- <div class="my-3 md:my-4 px-2 md:px-4 text-end">
             <a href="{{ route('homepage.create') }}"
                 class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
                 <span class="">Add new</span>
             </a>
-        </div>
+        </div> --}}
 
         @component('admin.components.alert')
         @endcomponent
