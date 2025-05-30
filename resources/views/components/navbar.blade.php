@@ -112,12 +112,14 @@
 
                 const backdrop = document.querySelector('[drawer-backdrop]');
                 if (backdrop) {
-                    backdrop.style.display = 'none'; // hide it
+                    backdrop.style.display = 'none';
                 }
+
+                // ✅ Restore scroll
+                document.body.style.overflow = 'auto';
             });
         });
     </script>
 
-    </script>
 
 </section>

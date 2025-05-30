@@ -157,20 +157,6 @@
             },
         });
 
-        // var homeswiper = new Swiper(".homeSwiper", {
-        //     spaceBetween: 30,
-        //     loop: true,
-        //     centeredSlides: true,
-        //     autoplay: {
-        //         delay: 2500,
-        //         disableOnInteraction: false,
-        //     },
-        //     // navigation: {
-        //     //     nextEl: ".swiper-button-next",
-        //     //     prevEl: ".swiper-button-prev",
-        //     // },
-        // });
-
         var homeswiper = new Swiper('.homeSwiper', {
             direction: 'horizontal',
             loop: true,
