@@ -2,20 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AboutPageController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ContactUsController;
-use App\Http\Controllers\admin\CoreValueController;
 use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\HomePageController;
-use App\Http\Controllers\admin\MissionController;
 use App\Http\Controllers\admin\MsgController;
 use App\Http\Controllers\Admin\NavController;
 use App\Http\Controllers\Admin\ProductCategoryController;
@@ -25,10 +19,7 @@ use App\Http\Controllers\Admin\ProductUniqueController;
 use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\admin\ServicePageController;
 use App\Http\Controllers\Admin\SubServicePageController;
-use App\Http\Controllers\admin\VisionController;
 use App\Http\Controllers\Admin\WhyUsController;
-use App\Http\Controllers\CustomizationController;
-use App\Models\ProductCategory;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

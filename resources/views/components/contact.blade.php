@@ -92,8 +92,8 @@
                 </div>
 
                 <div class="map-container">
-                        <iframe class='w-full h-[200px] xl:h-[230px]' src="{{ $contact->map_location }}"
-                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="{{ $contact->map_location }}"
+                        class='w-full h-[200px] xl:h-[230px]' style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
     </section>
