@@ -1,6 +1,6 @@
-@props(['why_us', 'service_why_us', 'id_why'])
+@props(['why_us', 'service_why_us'])
 
-<section id='{{ Str::slug($id_why->title['en']) }}' class="bg-[#e8e9ed] py-10">
+<section class="bg-[#e8e9ed] py-10">
     <h1 data-aos="fade-up" data-aos-duration="1400" class="text-[20px] md:text-[25px] text-[#FF3217] text-center font-[600] py-6 md:py-10">{{ $service_why_us->title[app()->getLocale()] }}</h1>
 
     <div data-aos="fade-up" data-aos-duration="1200"

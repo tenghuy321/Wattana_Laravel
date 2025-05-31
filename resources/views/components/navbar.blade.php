@@ -12,14 +12,19 @@
 
     <div class="flex-2 hidden lg:flex items-center justify-center">
         <ul class="flex items-center gap-6 xl:gap-10">
-            @foreach ($navItem as $item)
-                <li>
-                    <a href="#{{ Str::slug($item->title['en']) }}"
-                        class="px-2 py-[24px] xl:py-[30px] nav_link text-[14px] xl:text-[18px] text-[#1e1e1e]">
-                        {{ $item->title[app()->getLocale()] }}
-                    </a>
-                </li>
-            @endforeach
+            <li>
+                <a href="{{ route('home') }}"
+                    class="px-2 py-[24px] xl:py-[30px] nav_link text-[14px] xl:text-[18px] text-[#1e1e1e] {{ Route::currentRouteName() === 'home' ? 'active' : '' }}">
+                    {{ __("messages.home") }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('about-us') }}"
+                    class="px-2 py-[24px] xl:py-[30px] nav_link text-[14px] xl:text-[18px] text-[#1e1e1e] {{ Route::currentRouteName() === 'about-us' ? 'active' : '' }}">
+                    {{ __("messages.about_us") }}
+                </a>
+            </li>
+
         </ul>
 
         <div class="ml-4">
@@ -93,33 +98,18 @@
         <hr class="border border-t-1 border-[#FF3217]">
 
         <ul class="flex flex-col w-full items-start gap-4 xl:gap-10 p-4">
-            @foreach ($navItem as $item)
-                <li>
-                    <a href="#{{ Str::slug($item->title['en']) }}"
-                        class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
-                        {{ $item->title[app()->getLocale()] }}
-                    </a>
-                </li>
-            @endforeach
+            <li>
+                <a href="{{ route('home') }}"
+                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
+                    {{ __("messages.home") }}
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('about-us') }}"
+                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
+                    {{ __("messages.about_us") }}
+                </a>
+            </li>
         </ul>
     </div>
-
-    <script>
-        document.querySelectorAll('#drawer-example a.drawer-link').forEach(link => {
-            link.addEventListener('click', () => {
-                const drawer = document.getElementById('drawer-example');
-                drawer.classList.add('-translate-x-full');
-
-                const backdrop = document.querySelector('[drawer-backdrop]');
-                if (backdrop) {
-                    backdrop.style.display = 'none';
-                }
-
-                // ✅ Restore scroll
-                document.body.style.overflow = 'auto';
-            });
-        });
-    </script>
-
-
 </section>

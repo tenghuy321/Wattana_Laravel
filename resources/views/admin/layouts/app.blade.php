@@ -87,12 +87,12 @@
                                 <span class="text nav-text">Product Page</span>
                             </a>
                         </li>
-                        <li class="nav-link {{ Request::is('nav') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                        {{-- <li class="nav-link {{ Request::is('nav') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('nav') }}">
                                 <i class='bx bx-navigation icon'></i>
                                 <span class="text nav-text">Navbar</span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li
                             class="nav-link {{ Request::is('contactUs') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('contactUs') }}">

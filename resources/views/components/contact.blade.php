@@ -1,6 +1,6 @@
-    @props(['contact', 'id_contact'])
+    @props(['contact'])
     <hr class="border-t-1 border-[#e8e9ed] mt-6">
-    <section id="{{ Str::slug($id_contact->title['en']) }}" class='w-full h-full bg-white py-10 md:py-20'>
+    <section class='w-full h-full bg-white py-10 md:py-20'>
         <div
             class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 items-start justify-center max-w-7xl mx-auto px-4'>
             <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
@@ -100,6 +100,5 @@
 
     <div class="w-full max-w-7xl mx-auto py-4">
         <hr class="border-t-2 border-[#FF3217] my-6">
-        <p class="text-[14px] text-center">wattana glass & aluminum Alright 2025</p>
-    </div>
+        <p class="text-[14px] text-center">Wattana Glass & Aluminum Alright 2025</p>
     </div>

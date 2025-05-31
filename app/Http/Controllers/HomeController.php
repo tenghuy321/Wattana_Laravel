@@ -42,24 +42,23 @@ class HomeController extends Controller
         $data['productImages'] = $query->select('product_images.*', 'product_categories.slug')->get();
 
         $data['service_title'] = ServicePage::find(1);
-        $data['service_why_us'] = ServicePage::find(2);
         $data['service_client'] = ServicePage::find(4);
         $data['service_product_unique'] = ServicePage::find(5);
         $data['sub_service'] = SubServicePage::get();
-        $data['why_us'] = WhyUs::orderBy('order')->get();
+
         $data['contact'] = ContactUs::first();
         $data['product_unique'] = ProductUnique::orderBy('order')->get();
         $data['clients'] = Client::orderBy('order')->get();
 
         $data['nav'] = Nav::first();
-        $data['id_home'] = Nav::where('order', 2)->first();
-        $data['id_about'] = Nav::where('order', 3)->first();
-        $data['id_products'] = Nav::where('order', 4)->first();
-        $data['id_services'] = Nav::where('order', 5)->first();
-        $data['id_why'] = Nav::where('order', 6)->first();
-        $data['id_client'] = Nav::where('order', 7)->first();
-        $data['id_contact'] = Nav::where('order', 8)->first();
-        $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
+        // $data['id_home'] = Nav::where('order', 2)->first();
+        // $data['id_about'] = Nav::where('order', 3)->first();
+        // $data['id_products'] = Nav::where('order', 4)->first();
+        // $data['id_services'] = Nav::where('order', 5)->first();
+        // $data['id_why'] = Nav::where('order', 6)->first();
+        // $data['id_client'] = Nav::where('order', 7)->first();
+        // $data['id_contact'] = Nav::where('order', 8)->first();
+        // $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
         return view('home', $data);
     }
 }

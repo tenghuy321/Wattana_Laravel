@@ -1,5 +1,5 @@
-@props(['sub_service', 'service_title', 'id_services'])
-<section id="{{ Str::slug($id_services->title['en']) }}">
+@props(['sub_service', 'service_title'])
+<section>
     <h1 data-aos="fade-up" data-aos-duration="1400" class="text-[20px] md:text-[25px] text-[#FF3217] text-center font-[600] py-6 md:py-10">{{ $service_title->title[app()->getLocale()] }}</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl mx-auto pb-[4rem] overflow-hidden px-2">
         @foreach ($sub_service as $service)

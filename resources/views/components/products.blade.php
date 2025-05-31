@@ -1,7 +1,7 @@
-@props(['product_categories', 'productTitle', 'productImages', 'service_product_unique', 'product_unique', 'id_products'])
+@props(['product_categories', 'productTitle', 'productImages', 'service_product_unique', 'product_unique'])
 
-<section id="{{ Str::slug($id_products->title['en']) }}" class="w-full h-full bg-white">
-    <div class="w-full min-h-screen text-[20px] md:text-[25px] bg-center bg-cover overflow-hidden py-6 md:py-10">
+<section class="w-full h-full bg-white">
+    <div class="w-full min-h-screen text-[20px] md:text-[25px] bg-center bg-cover overflow-hidden pt-6 md:pt-10">
 
         <div class="flex flex-col space-y-2 justify-center w-full max-w-7xl mx-auto px-4 sm:px-10">
             <h1 data-aos="fade-right" data-aos-duration="1200" class="text-[#FF3217] font-[600]">
@@ -39,7 +39,7 @@
 
             <div class="md:col-span-9 h-full">
                 <div
-                    class="text-[#580B0C] text-[16px] xl:text-[20px] text-center flex flex-col items-center justify-start h-[80vh] md:h-[60vh] overflow-y-auto">
+                    class="text-[#580B0C] text-[16px] xl:text-[20px] text-center flex flex-col items-center justify-start h-[80vh] md:h-[70vh] overflow-y-auto">
                     <div class="columns-2 md:columns-3 gap-4" id="product-gallery">
                         @php $allImages = []; @endphp
                         @foreach ($productImages as $product)
@@ -75,14 +75,14 @@
     </div>
 </section>
 
-<div class="w-full h-full text-[12px] text-[#000] my-4 xl:my-4">
+<div class="w-full h-full text-[12px] text-[#000] mb-4">
     <h1 data-aos="fade-up" data-aos-duration="1200"
-        class="text-center text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-6 md:py-10">
+        class="text-center text-[20px] md:text-[25px] font-[600] text-[#FF3217] pb-6 md:pb-10">
         {{ $service_product_unique->title[app()->getLocale()] }}
     </h1>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto px-4 justify-items-center">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-4 justify-items-center">
         @foreach ($product_unique as $index => $item)
-            <div class="w-full text-center p-4 bg-white rounded shadow-md md:shadow" data-aos="zoom-in-up" data-aos-duration="1200">
+            <div class="w-full text-center p-10 bg-white rounded shadow-md" data-aos="zoom-in-up" data-aos-duration="1200">
                 <h1 class="text-[18px] text-[#FF3217] font-bold">0{{ $index + 1 }}</h1>
                 <p class="text-sm mt-2">{{ $item->title[app()->getLocale()] }}</p>
             </div>

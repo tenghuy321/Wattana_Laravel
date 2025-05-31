@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AboutUsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AboutPageController;
@@ -22,6 +24,7 @@ use App\Http\Controllers\Admin\SubServicePageController;
 use App\Http\Controllers\Admin\WhyUsController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
 
 Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
 

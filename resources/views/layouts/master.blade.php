@@ -132,7 +132,7 @@
 <body style="font-family: 'Kantumruy Pro', sans-serif;">
 
     {{-- <x-header :contact="$contact" :navItem="$navItem" /> --}}
-    <x-navbar :nav="$nav" :navItem="$navItem" />
+    <x-navbar :nav="$nav" />
     {{-- <x-navbar /> --}}
 
     @yield('content')
@@ -173,38 +173,6 @@
             effect: 'fade',
             slidesPerView: 1,
             spaceBetween: 0,
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav_link');
-
-            // Add active class to the first nav link by default
-            if (navLinks.length > 0) {
-                navLinks[0].classList.add('active');
-            }
-
-            function onScroll() {
-                let current = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-
-                    if (window.scrollY >= sectionTop - 200) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', onScroll);
         });
     </script>
     <script>
