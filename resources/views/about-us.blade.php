@@ -133,7 +133,7 @@
 
     <x-why-us :why_us="$why_us" :service_why_us="$service_why_us" />
     <div class="w-full max-w-7xl mx-auto px-4 py-4 md:py-10">
-        <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-4">{{ __('messages.registration') }}</h1>
+        <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-4    ">{{ __('messages.registration') }}</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
             @foreach ($regi as $item)
                 <img src="{{ $item->image }}" alt="" class="w-full h-full object-cover">

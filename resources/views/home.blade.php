@@ -115,12 +115,12 @@
 
     <x-products :product_categories="$product_categories" :productTitle="$productTitle" :productImages="$productImages" :service_product_unique="$service_product_unique" :product_unique="$product_unique" />
 
-    <div class='w-full h-screen bg-center bg-cover flex flex-col items-center justify-center overflow-hidden'>
+    <div class='relative w-full min-h-screen bg-center bg-cover flex flex-col items-center justify-center overflow-hidden mt-32 md:m-5'>
         <h1 class='text-[20px] md:text-[25px] text-[#FF3217] font-[600] tracking-wider'>{{ __('messages.customization') }}</h1>
         <div
             class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center mt-10 max-w-7xl mx-auto lg:px-4'>
             <div data-aos="fade-right" data-aos-duration="1200"
-                class="flex flex-col space-y-4 justify-center items-center lg:items-start order-2 lg:order-none mt-10 sm:mt-10 mb-0 sm:mb-20 lg:mb-0 lg:mt-0">
+                class="flex flex-col space-y-4 justify-center items-center lg:items-start order-2 lg:order-none mt-10 sm:mt-10 mb-0 sm:mb-20 lg:mb-0 lg:mt-0 px-4">
                 <img id="preview1" src="{{ asset('assets/images/default1.jpg') }}" alt="Room Preview"
                     class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] ml-0 lg:ml-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
                 <img id="preview2" src="{{ asset('assets/images/default2.jpg') }}" alt="Room Preview"
@@ -274,7 +274,7 @@
             </div>
 
             <div data-aos="fade-left" data-aos-duration="1200"
-                class="flex flex-col space-y-4 justify-center items-center lg:items-end order-3 lg:order-none mt-4 sm:mt-10 mb-20 lg:mb-0 lg:mt-0">
+                class="flex flex-col space-y-4 justify-center items-center lg:items-end order-3 lg:order-none mt-4 sm:mt-10 mb-20 lg:mb-0 lg:mt-0 px-4">
                 <img id="preview4" src="{{ asset('assets/images/default4.jpg') }}" alt="Room Preview"
                     class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] mr-0 lg:mr-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
                 <img id="preview5" src="{{ asset('assets/images/default5.jpg') }}" alt="Room Preview"
