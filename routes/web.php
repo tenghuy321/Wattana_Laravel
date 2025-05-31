@@ -12,14 +12,14 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\HeroBannerController;
 use App\Http\Controllers\Admin\HomePageController;
-use App\Http\Controllers\admin\MsgController;
+use App\Http\Controllers\Admin\MsgController;
 use App\Http\Controllers\Admin\NavController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductPageController;
 use App\Http\Controllers\Admin\ProductUniqueController;
 use App\Http\Controllers\Admin\RegistrationController;
-use App\Http\Controllers\admin\ServicePageController;
+use App\Http\Controllers\Admin\ServicePageController;
 use App\Http\Controllers\Admin\SubServicePageController;
 use App\Http\Controllers\Admin\WhyUsController;
 
