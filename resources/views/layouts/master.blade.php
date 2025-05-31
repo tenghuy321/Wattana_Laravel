@@ -83,7 +83,7 @@
         .prose ul {
             list-style-type: disc;
             padding-left: 1.25rem;
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .prose ul li::marker {
@@ -93,7 +93,7 @@
         .prose ol {
             list-style-type: decimal;
             padding-left: 1.25rem;
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .prose h2 {
@@ -102,7 +102,7 @@
         }
 
         .prose p {
-            font-size: 12px;
+            font-size: 14px;
         }
 
         .prose a {
@@ -120,7 +120,7 @@
 
         @media (max-width: 639px) {
             .prose p {
-                font-size: 10px;
+                font-size: 12px;
             }
         }
     </style>

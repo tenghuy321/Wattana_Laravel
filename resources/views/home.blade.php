@@ -75,9 +75,8 @@
 
 
     <section id='{{ Str::slug($id_home->title['en']) }}'>
-        <div
-            class="relative z-20 h-full w-full flex items-center md:items-start justify-center mt-[4rem] md:mt-[5rem] py-10">
-            <div class="text-center px-4">
+        <div class="relative z-20 h-full w-full flex items-center md:items-start justify-center mt-[4rem] md:mt-[5rem] py-10">
+            {{-- <div class="text-center px-4">
                 <h1 class="text-[50px] sm:text-[70px] xl:text-[100px] font-[700] leading-none text-[#FF3217] uppercase"
                     data-aos="zoom-in-up" data-aos-duration="1200">
                     {{ $homes->title[app()->getLocale()] }}
@@ -86,7 +85,8 @@
                     data-aos="zoom-in-up" data-aos-duration="1500">
                     {{ $homes->sub_title[app()->getLocale()] }}
                 </p>
-            </div>
+            </div> --}}
+            <img src="{{ asset($nav->image) }}" alt="" class="p-0 w-64 h-auto">
         </div>
 
         <div class="w-full h-[40vh] sm:h-[50vh] md:h-[85vh] relative z-10">
