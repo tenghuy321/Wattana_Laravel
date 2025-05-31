@@ -68,8 +68,7 @@
                                 <span class="text nav-text">About Page</span>
                             </a>
                         </li>
-                        <li
-                            class="nav-link {{ Request::is('servicepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
+                        <li class="nav-link {{ Request::is('servicepage') ? 'bg-[#FF3217] rounded-md !text-[#ffffff]' : '' }}">
                             <a href="{{ url('servicepage') }}">
                                 <i class='bx bx-cog icon'></i>
                                 <span class="text nav-text">Service Page</span>
