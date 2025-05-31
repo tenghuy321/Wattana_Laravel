@@ -59,7 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('msg', MsgController::class)->except(['destroy', 'show']);
 
     // services
-    Route::resource('servicepage', ServicePageController::class)->except(['destroy', 'show']);
+    Route::resource('/servicepage', ServicePageController::class)->except(['destroy', 'show']);
 
     // service
     Route::resource('sub_servicepage', SubServicePageController::class)->except(['destroy', 'show']);
