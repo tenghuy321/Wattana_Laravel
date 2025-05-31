@@ -1,7 +1,8 @@
     @props(['contact', 'id_contact'])
     <hr class="border-t-1 border-[#e8e9ed] mt-6">
     <section id="{{ Str::slug($id_contact->title['en']) }}" class='w-full h-full bg-white py-10 md:py-20'>
-        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 items-start justify-center max-w-7xl mx-auto px-4'>
+        <div
+            class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 items-start justify-center max-w-7xl mx-auto px-4'>
             <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
                 <h1 class='pt-4 md:pt-10'>{{ $contact->title1[app()->getLocale()] }}</h1>
                 <p class='text-[14px] text-[#FF3217] font-[400] pt-2 sm:pt-10'>
@@ -91,15 +92,14 @@
                 </div>
 
                 <div class="map-container">
-                    <iframe class='w-full h-[200px] xl:h-[230px]' src="{{ $contact->map_location }}" style='border: 0'
-                        allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                        title="Google Map"></iframe>
+                        <iframe class='w-full h-[200px] xl:h-[230px]' src="{{ $contact->map_location }}"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </section>
+    </section>
 
-        <div class="w-full max-w-7xl mx-auto py-4">
-            <hr class="border-t-2 border-[#FF3217] my-6">
-            <p class="text-[14px] text-center">wattana glass & aluminum Alright 2025</p>
-        </div>
+    <div class="w-full max-w-7xl mx-auto py-4">
+        <hr class="border-t-2 border-[#FF3217] my-6">
+        <p class="text-[14px] text-center">wattana glass & aluminum Alright 2025</p>
+    </div>
     </div>

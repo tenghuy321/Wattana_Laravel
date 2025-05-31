@@ -39,7 +39,7 @@
 
             <div class="md:col-span-9 h-full">
                 <div
-                    class="text-[#580B0C] text-[16px] xl:text-[20px] text-center flex flex-col items-center justify-start h-[60vh] overflow-y-auto">
+                    class="text-[#580B0C] text-[16px] xl:text-[20px] text-center flex flex-col items-center justify-start h-[80vh] md:h-[60vh] overflow-y-auto">
                     <div class="columns-2 md:columns-3 gap-4" id="product-gallery">
                         @php $allImages = []; @endphp
                         @foreach ($productImages as $product)
