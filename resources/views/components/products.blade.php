@@ -82,7 +82,7 @@
     </h1>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto px-4 justify-items-center">
         @foreach ($product_unique as $index => $item)
-            <div class="w-full text-center p-4 bg-white rounded shadow" data-aos="zoom-in-up" data-aos-duration="1200">
+            <div class="w-full text-center p-4 bg-white rounded shadow-md md:shadow" data-aos="zoom-in-up" data-aos-duration="1200">
                 <h1 class="text-[18px] text-[#FF3217] font-bold">0{{ $index + 1 }}</h1>
                 <p class="text-sm mt-2">{{ $item->title[app()->getLocale()] }}</p>
             </div>
