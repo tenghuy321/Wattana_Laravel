@@ -115,7 +115,7 @@
 
     <x-products :product_categories="$product_categories" :productTitle="$productTitle" :productImages="$productImages" :service_product_unique="$service_product_unique" :product_unique="$product_unique" />
 
-    <div class='relative w-full min-h-screen bg-center bg-cover flex flex-col items-center justify-center overflow-hidden mt-32 md:m-5'>
+    {{-- <div class='relative w-full min-h-screen bg-center bg-cover flex flex-col items-center justify-center overflow-hidden mt-32 md:m-5'>
         <h1 class='text-[20px] md:text-[25px] text-[#FF3217] font-[600] tracking-wider'>{{ __('messages.customization') }}</h1>
         <div
             class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center mt-10 max-w-7xl mx-auto lg:px-4'>
@@ -283,9 +283,13 @@
                     class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] mr-0 lg:mr-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <x-our-service :sub_service="$sub_service" :service_title="$service_title" />
+
+    <div class="flex items-center justify-center px-4" data-aos="fade-up" data-aos-duration="1400">
+        <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-[80%] md:w-1/2 h-auto" />
+    </div>
     <x-our-client :service_client="$service_client" :clients="$clients" />
     <x-contact :contact="$contact" />
 @endsection
