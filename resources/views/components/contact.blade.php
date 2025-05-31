@@ -83,7 +83,7 @@
                         <img src={{ asset('assets/images/icon-1.png') }} alt="" class="w-8 h-8" />
                     </a>
                     <a href="{{ $contact->telegram }}">
-                        <img src={{ asset('assets/images/icon-2.png') }} alt="" class="w-8 h-8" />
+                        <img src={{ asset('assets/images/icon-2new.png') }} alt="" class="w-8 h-8" />
                     </a>
                     <a href="{{ $contact->line }}">
                         <img src={{ asset('assets/images/icon-3.png') }} alt="" class="w-8 h-8" />

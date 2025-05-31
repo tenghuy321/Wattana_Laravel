@@ -120,7 +120,7 @@
 
         @media (max-width: 639px) {
             .prose p {
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     </style>
