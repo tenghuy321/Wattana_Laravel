@@ -2,9 +2,9 @@
     <hr class="border-t-1 border-[#e8e9ed] mt-6">
     <section id="{{ Str::slug($id_contact->title['en']) }}" class='w-full h-full bg-white py-10 md:py-20'>
         <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 items-start justify-center max-w-7xl mx-auto px-4'>
-            <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700]'>
-                <h1 class='pt-10'>{{ $contact->title1[app()->getLocale()] }}</h1>
-                <p class='text-[14px] text-[#FF3217] font-[400] pt-4 sm:pt-10'>
+            <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
+                <h1 class='pt-4 md:pt-10'>{{ $contact->title1[app()->getLocale()] }}</h1>
+                <p class='text-[14px] text-[#FF3217] font-[400] pt-2 sm:pt-10'>
                     {{ $contact->sub_title[app()->getLocale()] }}</p>
 
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ $contact->email }}"
@@ -27,10 +27,10 @@
                 <img src={{ asset($contact->image) }} alt="" class='w-40 h-auto' />
             </div>
 
-            <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700]'>
+            <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
                 <h1 class='pt-10'>{{ $contact->title2[app()->getLocale()] }}</h1>
 
-                <div class='flex items-center space-x-2 text-[14px] text-[#000] font-[400] pt-4 sm:pt-10'>
+                <div class='flex items-center space-x-2 text-[14px] text-[#000] font-[400] pt-2 sm:pt-10'>
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -75,7 +75,7 @@
                 </a>
             </div>
 
-            <div class='flex flex-col space-y-4 text-[22px] text-[#FF3217] font-[700]'>
+            <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
                 <h1 class='pt-10'>{{ $contact->title3[app()->getLocale()] }}</h1>
 
                 <div class='flex items-center space-x-4'>

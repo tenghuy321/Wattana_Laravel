@@ -42,7 +42,7 @@
                     class="text-[#580B0C] text-[16px] xl:text-[20px] text-center flex flex-col items-center justify-start h-[60vh] overflow-y-auto">
                     <div class="columns-2 md:columns-3 gap-4" id="product-gallery">
                         @php $allImages = []; @endphp
-                        @forelse ($productImages as $product)
+                        @foreach ($productImages as $product)
                             @php
                                 $images = json_decode($product->image, true);
                                 if (!empty($images)) {
@@ -52,22 +52,22 @@
                                             'src' => asset($img),
                                             'product_id' => $product->id,
                                             'index' => $index,
+                                            'category' => $product->product_category->slug ?? 'all'
                                         ];
                                     }
                                 }
                             @endphp
                             @if (!empty($images))
                                 @foreach ($images as $index => $img)
-                                    <div class="break-inside-avoid overflow-hidden rounded-[5px] mb-4">
+                                    <div class="product-item break-inside-avoid overflow-hidden rounded-[5px] mb-4"
+                                         data-category="{{ $product->product_category->slug ?? 'all' }}">
                                         <img src="{{ asset($img) }}" alt=""
                                             onclick="openPopup('popup-{{ $product->id }}-{{ $index }}', {{ $loop->parent->index * count($images) + $loop->index }})"
                                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105">
                                     </div>
                                 @endforeach
                             @endif
-                        @empty
-                            <p>No products found.</p>
-                        @endforelse
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
     </h1>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto px-4 justify-items-center">
         @foreach ($product_unique as $index => $item)
-            <div class="w-full text-center p-4 bg-white rounded shadow" data-aos="fade-up" data-aos-duration="1200">
+            <div class="w-full text-center p-4 bg-white rounded shadow" data-aos="zoom-in-up" data-aos-duration="1200">
                 <h1 class="text-[18px] text-[#FF3217] font-bold">0{{ $index + 1 }}</h1>
                 <p class="text-sm mt-2">{{ $item->title[app()->getLocale()] }}</p>
             </div>
@@ -179,12 +179,48 @@
     const allImages = @json($allImages);
     let currentImageIndex = 0;
 
-    function filterProducts(product_category) {
+    function filterProducts(category) {
+        // Update active button styling
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            if (btn.dataset.category === category) {
+                btn.classList.add('bg-[#FF3217]', 'text-[#fff]', 'font-[500]');
+                btn.classList.remove('bg-gray-100', 'text-black');
+            } else {
+                btn.classList.remove('bg-[#FF3217]', 'text-[#fff]', 'font-[500]');
+                btn.classList.add('bg-gray-100', 'text-black');
+            }
+        });
+
+        // Filter products
+        const productItems = document.querySelectorAll('.product-item');
+        productItems.forEach(item => {
+            if (category === 'all' || item.dataset.category === category) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Update URL without reloading
         const url = new URL(window.location.href);
-        url.searchParams.set('product_category', product_category);
-        window.location.href = url.toString();
+        if (category === 'all') {
+            url.searchParams.delete('product_category');
+        } else {
+            url.searchParams.set('product_category', category);
+        }
+        window.history.pushState({}, '', url);
     }
 
+    // Initialize based on URL parameter
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoryParam = urlParams.get('product_category');
+        if (categoryParam) {
+            filterProducts(categoryParam);
+        }
+    });
+
+    // Rest of your lightbox functions remain the same
     function openPopup(id, index) {
         currentImageIndex = index;
         const image = allImages.find(img => img.id === id);

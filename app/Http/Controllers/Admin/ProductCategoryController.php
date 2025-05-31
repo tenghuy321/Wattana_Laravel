@@ -36,9 +36,9 @@ class ProductCategoryController extends Controller
             'slug' => $this->generateSlug($validated['name']['en']),
         ];
 
-        if ($request->hasFile('icon')) {
-            $data['icon'] = $request->file('icon')->store('product_categories', 'custom');
-        }
+        // if ($request->hasFile('icon')) {
+        //     $data['icon'] = $request->file('icon')->store('product_categories', 'custom');
+        // }
 
         $i = ProductCategory::create($data);
 
@@ -72,12 +72,12 @@ class ProductCategoryController extends Controller
             'slug' => $this->generateSlug($validated['name']['en']),
         ];
 
-        if ($request->hasFile('icon')) {
-            if ($product_category->icon && Storage::disk('custom')->exists($product_category->icon)) {
-                Storage::disk('custom')->delete($product_category->icon);
-            }
-            $data['icon'] = $request->file('icon')->store('product_categories', 'custom');
-        }
+        // if ($request->hasFile('icon')) {
+        //     if ($product_category->icon && Storage::disk('custom')->exists($product_category->icon)) {
+        //         Storage::disk('custom')->delete($product_category->icon);
+        //     }
+        //     $data['icon'] = $request->file('icon')->store('product_categories', 'custom');
+        // }
 
         $i = $product_category->update($data);
 
@@ -95,9 +95,9 @@ class ProductCategoryController extends Controller
     public function delete(string $id)
     {
         $product_category = ProductCategory::findOrFail($id);
-        if ($product_category->icon && Storage::disk('custom')->exists($product_category->icon)) {
-            Storage::disk('custom')->delete($product_category->icon);
-        }
+        // if ($product_category->icon && Storage::disk('custom')->exists($product_category->icon)) {
+        //     Storage::disk('custom')->delete($product_category->icon);
+        // }
 
         $i = $product_category->where('id', $id)->update(['active' => 0]);
 

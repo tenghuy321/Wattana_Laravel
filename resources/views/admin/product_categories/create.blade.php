@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div>
+            {{-- <div>
                 <label for="dropzone-file" id="drop-area"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-[#000] border-dashed rounded-lg cursor-pointer bg-[#fff]">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6 w-full h-full bg-contain bg-center bg-no-repeat rounded-md text-center"
@@ -46,7 +46,7 @@
                         onchange="uploadImage(event)" />
                 </label>
                 <x-input-error class="mt-2" :messages="$errors->get('icon')" />
-            </div>
+            </div> --}}
 
             <div class="flex justify-between w-full">
                 <a href="{{ route('product_category.index') }}"
@@ -59,7 +59,7 @@
         </form>
     </div>
 
-    <script>
+    {{-- <script>
         const dropArea = document.getElementById('drop-area');
         const imageFile = document.getElementById('dropzone-file');
         const imagePreview = document.getElementById('img-preview');
@@ -98,5 +98,5 @@
                 imageFile.files = event.dataTransfer.files; // Attach the dropped file to input
             }
         });
-    </script>
+    </script> --}}
 </x-app-layout>

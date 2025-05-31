@@ -20,7 +20,7 @@
                     <thead class="text-black sticky top-0 z-10">
                         <tr>
                             <th class="text-left py-3 px-4 text-xs w-8 border-r border-[#FF3217]">#</th>
-                            <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Icon</th>
+                            {{-- <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Icon</th> --}}
                             <th class="text-left py-3 px-4 text-xs w-[200px] border-r border-[#FF3217]">Name</th>
                             <th class="text-left py-3 px-4 text-xs w-[200px]">Actions</th>
                         </tr>
@@ -30,9 +30,9 @@
                             <tr class="border-t border-[#FF3217]">
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $index + 1 }}
                                 </td>
-                                <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
+                                {{-- <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <img src="{{ asset($product_category->icon) }}" alt="" class="w-10 h-10">
-                                </td>
+                                </td> --}}
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col truncate">
                                         <p>{{ $product_category->name['en'] ?? '' }}</p>

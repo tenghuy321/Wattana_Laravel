@@ -17,19 +17,7 @@ class ProductsController extends Controller
         $data['productTitle'] = ProductPage::first();
         $data['nav'] = Nav::first();
         $data['navItem'] = Nav::where('id', '!=', '1')->orderBy('order')->get();
-        // $data['product_category'] = ProductCategory::where('active', 1)->get();
 
-        // $defaultSlug = $data['product_category']->first()->slug ?? null;
-        // $selectedSlug = request('product_category', $defaultSlug);
-
-        // $data['selectedCategorySlug'] = $selectedSlug;
-
-        // $data['productImages'] = ProductImage::join('product_categories', 'product_images.product_category_id', '=', 'product_categories.id')
-        //     ->where('product_images.active', 1)
-        //     ->where('product_categories.slug', $selectedSlug)
-        //     ->select('product_images.*', 'product_categories.slug as category_slug')
-        //     ->get();
-                // Fetch the categories to show in the filter
         $data['product_categories'] = ProductCategory::where('active', 1)->get();
 
         // Get the category filter (default to 'all' if no category is selected)

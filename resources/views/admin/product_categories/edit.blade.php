@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <!-- Dropzone for Image -->
+            {{-- <!-- Dropzone for Image -->
             <div>
                 <label for="dropzone-file{{ $product_category->id }}" id="drop-area"
                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-[#000] border-dashed rounded-lg cursor-pointer bg-[#fff]">
@@ -51,7 +51,7 @@
                         accept="image/*" onchange="uploadImage(event)" />
                 </label>
                 <x-input-error class="mt-2" :messages="$errors->get('icon')" />
-            </div>
+            </div> --}}
 
             <div class="flex justify-between">
                 <a href="{{ route('product_category.index') }}"
@@ -73,46 +73,6 @@
                 .replace(/[^a-z0-9]+/g, '-') // replace non-alphanumerics with hyphen
                 .replace(/^-+|-+$/g, ''); // trim leading/trailing hyphens
             document.getElementById('slug').value = slug;
-        });
-
-
-        const dropArea = document.getElementById('drop-area');
-        const imageFile = document.getElementById('dropzone-file');
-        const imagePreview = document.getElementById('img-preview');
-
-        function uploadImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const imgLink = URL.createObjectURL(file);
-                imagePreview.style.backgroundImage = `url(${imgLink})`;
-                imagePreview.style.backgroundSize = "contain";
-                imagePreview.style.backgroundPosition = "center";
-                imagePreview.innerHTML = "";
-            }
-        }
-
-        // Drag-and-drop functionality
-        dropArea.addEventListener('dragover', (event) => {
-            event.preventDefault();
-            dropArea.classList.add('border-blue-500');
-        });
-
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.classList.remove('border-blue-500');
-        });
-
-        dropArea.addEventListener('drop', (event) => {
-            event.preventDefault();
-            dropArea.classList.remove('border-blue-500');
-            const file = event.dataTransfer.files[0];
-            if (file) {
-                const imgLink = URL.createObjectURL(file);
-                imagePreview.style.backgroundImage = `url(${imgLink})`;
-                imagePreview.style.backgroundSize = "contain";
-                imagePreview.style.backgroundPosition = "center";
-                imagePreview.innerHTML = ""; // Clear the default content inside preview
-                imageFile.files = event.dataTransfer.files; // Attach the dropped file to input
-            }
         });
     </script>
 </x-app-layout>

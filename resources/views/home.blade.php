@@ -73,8 +73,23 @@
         </div>
     </div> --}}
 
-    <section id="{{ Str::slug($id_home->title['en']) }}" class="w-full h-[60vh] md:h-[85vh] relative mt-[4rem] md:mt-[5rem] z-10">
-        <div class="absolute top-0 left-0 w-full h-full">
+
+    <section id='{{ Str::slug($id_home->title['en']) }}'>
+        <div
+            class="relative z-20 h-full w-full flex items-center md:items-start justify-center mt-[4rem] md:mt-[5rem] py-10">
+            <div class="text-center px-4">
+                <h1 class="text-[50px] sm:text-[70px] xl:text-[100px] font-[700] leading-none text-[#FF3217] uppercase"
+                    data-aos="zoom-in-up" data-aos-duration="1200">
+                    {{ $homes->title[app()->getLocale()] }}
+                </h1>
+                <p class="text-[20px] sm:text-[27px] text-[#000] uppercase mt-4 font-[700] leading-none"
+                    data-aos="zoom-in-up" data-aos-duration="1500">
+                    {{ $homes->sub_title[app()->getLocale()] }}
+                </p>
+            </div>
+        </div>
+
+        <div class="w-full h-[40vh] sm:h-[50vh] md:h-[85vh] relative z-10">
             <div class="swiper homeSwiper h-full">
                 <div class="swiper-wrapper h-full">
                     @foreach ($heroBanner as $item)
@@ -87,7 +102,7 @@
                 <div class="swiper-pagination"></div>
             </div>
 
-            <div class="absolute bottom-4 left-4 z-30">
+            {{-- <div class="absolute bottom-4 left-4 z-30">
                 <button
                     class="bg-white bg-opacity-50 hover:bg-opacity-75 text-[14px] md:text-[16px] tracking-[2px] text-black px-3 py-2 rounded-full custom-prev">
                     Prev
@@ -98,23 +113,10 @@
                     class="bg-white bg-opacity-50 hover:bg-opacity-75 text-[14px] md:text-[16px] tracking-[2px] text-black px-3 py-2 rounded-full custom-next">
                     Next
                 </button>
-            </div>
+            </div> --}}
         </div>
 
-        <div class="relative z-20 h-full w-full flex items-center md:items-start justify-center pt-0 md:pt-[4rem]">
-            <div class="text-center px-4">
-                <h1 class="text-[50px] sm:text-[70px] xl:text-[100px] font-[700] leading-none text-[#FF3217] uppercase"
-                    data-aos="zoom-in-up" data-aos-duration="1200">
-                    {{ $homes->title[app()->getLocale()] }}
-                </h1>
-                <p class="text-[20px] sm:text-[30px] xl:text-[40px] text-[#000] uppercase mt-2 font-[600] leading-none"
-                    data-aos="zoom-in-up" data-aos-duration="1500">
-                    {{ $homes->sub_title[app()->getLocale()] }}
-                </p>
-            </div>
-        </div>
     </section>
-
 
     <section id='{{ Str::slug($id_about->title['en']) }}'
         class="w-full h-full text-[20px] md:text-[25px] bg-center bg-cover py-10 md:py-20">
