@@ -77,7 +77,7 @@
 
 <div class="w-full h-full text-[12px] text-[#000] mb-4">
     <h1 data-aos="fade-up" data-aos-duration="1200"
-        class="text-center text-[20px] md:text-[25px] font-[600] text-[#FF3217] pb-6 md:pb-10">
+        class="text-center text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-6 md:py-10">
         {{ $service_product_unique->title[app()->getLocale()] }}
     </h1>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-4 justify-items-center">
