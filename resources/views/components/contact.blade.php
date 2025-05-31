@@ -28,7 +28,7 @@
             </div>
 
             <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
-                <h1 class='pt-10'>{{ $contact->title2[app()->getLocale()] }}</h1>
+                <h1 class='pt-4 md:pt-10'>{{ $contact->title2[app()->getLocale()] }}</h1>
 
                 <div class='flex items-center space-x-2 text-[14px] text-[#000] font-[400] pt-2 sm:pt-10'>
                     <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
@@ -76,7 +76,7 @@
             </div>
 
             <div class='flex flex-col space-y-2 md:space-y-4 text-[22px] text-[#FF3217] font-[700]'>
-                <h1 class='pt-10'>{{ $contact->title3[app()->getLocale()] }}</h1>
+                <h1 class='pt-4 md:pt-10'>{{ $contact->title3[app()->getLocale()] }}</h1>
 
                 <div class='flex items-center space-x-4'>
                     <a href="{{ $contact->facebook }}">
