@@ -50,7 +50,7 @@ class ContactUsController extends Controller
     //         'map_location' => $request->input('map_location', ''),
     //         'facebook' => $request->input('facebook', ''),
     //         'telegram' => $request->input('telegram', ''),
-    //         'line' => $request->input('line', ''),
+    //         'personal_telegram' => $request->input('personal_telegram', ''),
     //     ];
 
     //     if ($request->hasFile('image')) {
@@ -100,7 +100,7 @@ class ContactUsController extends Controller
             'map_location' => $request->input('map_location', ''),
             'facebook' => $request->input('facebook', ''),
             'telegram' => $request->input('telegram', ''),
-            'line' => $request->input('line', ''),
+            'personal_telegram' => $request->input('personal_telegram', ''),
         ];
 
 

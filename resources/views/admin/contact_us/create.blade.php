@@ -108,10 +108,10 @@
                     <x-input-error class="mt-2" :messages="$errors->get('telegram')" />
                 </div>
                 <div>
-                    <label for="line" class="block text-sm font-medium text-gray-700">Line Link</label>
-                    <input value="{{ old('line') }}" type="text" name="line" id="line"
+                    <label for="personal_telegram" class="block text-sm font-medium text-gray-700">Personal Telegram Link</label>
+                    <input value="{{ old('personal_telegram') }}" type="text" name="personal_telegram" id="personal_telegram"
                         class="mt-1 block w-full p-2 border rounded-md focus:ring-green-500 focus:border-green-500 text-green-900 text-sm">
-                    <x-input-error class="mt-2" :messages="$errors->get('line')" />
+                    <x-input-error class="mt-2" :messages="$errors->get('personal_telegram')" />
                 </div>
             </div>
 

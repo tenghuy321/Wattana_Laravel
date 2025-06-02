@@ -22,7 +22,7 @@ class ContactUs extends Model
         'map_location',
         'facebook',
         'telegram',
-        'line',
+        'personal_telegram',
         'image'
     ];
 
