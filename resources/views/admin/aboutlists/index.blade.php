@@ -1,15 +1,19 @@
 @extends('admin.layouts.app')
 @section('header')
-    About Page
+    About List
 @endsection
 @section('content')
     <div class="">
-        {{-- <div class="my-3 md:my-4 px-2 md:px-4 text-end">
-            <a href="{{ route('aboutlist.create') }}"
+        <div class="my-3 md:my-4 px-2 md:px-4 text-end">
+            {{-- <a href="{{ route('aboutlist.create') }}"
                 class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
                 <span class="">Add new</span>
+            </a> --}}
+            <a href="{{ route('aboutpage.index') }}"
+                class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
+                <span class="">Back</span>
             </a>
-        </div> --}}
+        </div>
 
         @component('admin.components.alert')
         @endcomponent
@@ -26,30 +30,30 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-700">
-                        @foreach ($aboutpages as $index => $about)
+                        @foreach ($aboutlists as $index => $aboutlist)
                             <tr class="border-t border-[#FF3217]">
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">{{ $index + 1 }}
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col truncate">
-                                        <p>{{ $about->title['en'] ?? '' }}</p>
-                                        <p>{{ $about->title['kh'] ?? '' }}</p>
+                                        <p>{{ $aboutlist->title['en'] ?? '' }}</p>
+                                        <p>{{ $aboutlist->title['kh'] ?? '' }}</p>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-xs max-w-[200px] border-r border-[#FF3217]">
                                     <div class="flex flex-col">
                                         <div class="line-clamp-1">
-                                            {!! $about->content['en'] ?? '' !!}
+                                            {!! $aboutlist->content['en'] ?? '' !!}
                                         </div>
                                         <div class="line-clamp-1">
-                                            {!! $about->content['kh'] ?? '' !!}
+                                            {!! $aboutlist->content['kh'] ?? '' !!}
                                         </div>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-xs flex max-w-[200px]">
                                     <div class="flex justify-center items-center">
-                                        <a class=""
-                                            href={{ route('aboutlist.index') }}>
+                                        <a class="@if ($aboutlist->id !== 3) hidden @endif"
+                                            href={{ route('registration.index') }}>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                                 stroke="#FF3217" stroke-linecap="round" stroke-linejoin="round"
                                                 width="24" height="24" stroke-width="1.5">
@@ -61,7 +65,7 @@
                                                 <path d="M11 18v.01"></path>
                                             </svg>
                                         </a>
-                                        <a href="{{ route('aboutpage.edit', $about->id) }}" title="Edit">
+                                        <a href="{{ route('aboutlist.edit', $aboutlist->id) }}" title="Edit">
                                             <svg class="w-6 h-6 text-green-500 hover:text-green-700 transition"
                                                 xmlns="http://www.w3.org/2FF3217/svg" fill="none" viewBox="0 0 24 24">
                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"

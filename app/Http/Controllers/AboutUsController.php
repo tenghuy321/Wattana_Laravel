@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutList;
 use App\Models\Nav;
 use App\Models\WhyUs;
 use App\Models\HomePage;
@@ -22,6 +23,9 @@ class AboutUsController extends Controller
         $data['aboutpage'] = AboutPage::where('id', '!=', 1)->get();
         $data['service_why_us'] = ServicePage::find(2);
         $data['contact'] = ContactUs::first();
+        $data['vision'] = AboutList::find(1);
+        $data['mission'] = AboutList::find(2);
+        $data['regi_title'] = AboutList::find(3);
         $data['regi'] = Registration::orderBy('order')->get();
 
         $data['why_us'] = WhyUs::orderBy('order')->get();

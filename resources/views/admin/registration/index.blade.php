@@ -9,7 +9,7 @@
                 class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
                 <span class="">Add new</span>
             </a>
-            <a href="{{ route('servicepage.index') }}"
+            <a href="{{ route('aboutlist.index') }}"
                 class="hover:!bg-[#FF3217] hover:!text-[#ffffff] text-[#FF3217] px-4 py-2 my-3 rounded-[5px] border-2 border-[#FF3217] text-[12px] sm:text-[14px]">
                 <span class="">Back</span>
             </a>

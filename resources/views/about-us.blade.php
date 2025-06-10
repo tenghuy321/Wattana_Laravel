@@ -76,7 +76,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-7xl mx-auto px-4 gap-10">
             <div class="w-full text-[13px] md:text-[14px] text-[#1e1e1e] p-10 shadow-md">
                 <div class="flex items-center justify-between py-4">
-                    <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217]">{{ __('messages.vision') }}</h1>
+                    <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217]">
+                        {{ $vision->title[app()->getLocale()] }}</h1>
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="28" cy="28" r="28" fill="#FF3217" />
@@ -104,11 +105,17 @@
                         </g>
                     </svg>
                 </div>
-                <p>{{ __('messages.vision_content') }}</p>
+                <div
+                    class="prose max-w-none text-black prose-p:text-[12px] lg:prose-p:text-[14px] prose-p:my-1 prose-h1:text-[#ff3217] prose-h2:text-[#ff3217] prose-h3:text-[#ff3217]
+                    prose-headings:text-black prose-p:text-black prose-strong:text-black prose-a:text-black prose-li:text-black prose-blockquote:text-black prose-p:leading-[1.4] prose-h1:mt-2 prose-h2:mt-2 prose-h3:mt-2 prose-h1:leading-[1.4] prose-h2:leading-[1.4] prose-h3:leading-[1.4]
+                    marker:text-black">
+                    {!! $vision->content[app()->getLocale()] !!}
+                </div>
             </div>
             <div class="w-full text-[13px] md:text-[14px] text-[#1e1e1e] p-10 shadow-md">
                 <div class="flex items-center justify-between py-4">
-                    <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217]">{{ __('messages.mission') }}</h1>
+                    <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217]">
+                        {{ $mission->title[app()->getLocale()] }}</h1>
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <circle cx="28" cy="28" r="28" fill="#FF3217" />
@@ -126,14 +133,19 @@
 
                     </svg>
                 </div>
-                <p>{{ __('messages.mission_content') }}</p>
+                <div
+                    class="prose max-w-none text-black prose-p:text-[12px] lg:prose-p:text-[14px] prose-p:my-1 prose-h1:text-[#ff3217] prose-h2:text-[#ff3217] prose-h3:text-[#ff3217]
+                    prose-headings:text-black prose-p:text-black prose-strong:text-black prose-a:text-black prose-li:text-black prose-blockquote:text-black prose-p:leading-[1.4] prose-h1:mt-2 prose-h2:mt-2 prose-h3:mt-2 prose-h1:leading-[1.4] prose-h2:leading-[1.4] prose-h3:leading-[1.4]
+                    marker:text-black">
+                    {!! $mission->content[app()->getLocale()] !!}
+                </div>
             </div>
         </div>
     </section>
 
     <x-why-us :why_us="$why_us" :service_why_us="$service_why_us" />
     <div class="w-full max-w-7xl mx-auto px-4 py-4 md:py-10">
-        <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-4    ">{{ __('messages.registration') }}</h1>
+        <h1 class="text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-4">{{ $regi_title->title[app()->getLocale()] }}</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
             @foreach ($regi as $item)
                 <img src="{{ $item->image }}" alt="" class="w-full h-full object-cover">

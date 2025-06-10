@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\Admin\AboutListController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\AboutPageController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\Admin\ProductUniqueController;
 use App\Http\Controllers\Admin\RegistrationController;
 use App\Http\Controllers\Admin\ServicePageController;
 use App\Http\Controllers\Admin\SubServicePageController;
+use App\Http\Controllers\Admin\VisionController;
 use App\Http\Controllers\Admin\WhyUsController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -34,6 +36,9 @@ Route::middleware('auth')->group(function () {
 
     // homepage
     Route::resource('homepage', HomePageController::class)->except(['destroy', 'show']);
+
+    // about list
+    Route::resource('aboutlist', AboutListController::class)->except(['destroy', 'show']);
 
     // hero banner
     Route::resource('hero_banner', HeroBannerController::class)->except(['destroy', 'show']);
