@@ -52,7 +52,7 @@
                                             'src' => asset($img),
                                             'product_id' => $product->id,
                                             'index' => $index,
-                                            'category' => $product->product_category->slug ?? 'all'
+                                            'category' => $product->product_category->slug ?? 'all',
                                         ];
                                     }
                                 }
@@ -60,7 +60,7 @@
                             @if (!empty($images))
                                 @foreach ($images as $index => $img)
                                     <div class="product-item break-inside-avoid overflow-hidden rounded-[5px] mb-4"
-                                         data-category="{{ $product->product_category->slug ?? 'all' }}">
+                                        data-category="{{ $product->product_category->slug ?? 'all' }}">
                                         <img src="{{ asset($img) }}" alt=""
                                             onclick="openPopup('popup-{{ $product->id }}-{{ $index }}', {{ $loop->parent->index * count($images) + $loop->index }})"
                                             class="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105">
@@ -80,10 +80,14 @@
         class="text-center text-[20px] md:text-[25px] font-[600] text-[#FF3217] py-10">
         {{ $service_product_unique->title[app()->getLocale()] }}
     </h1>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-4 justify-items-center">
+    <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 max-w-7xl mx-auto px-4 justify-items-center">
         @foreach ($product_unique as $index => $item)
-            <div class="w-full text-center p-10 bg-white rounded shadow-md" data-aos="zoom-in-up" data-aos-duration="1200">
-                <h1 class="text-[18px] text-[#FF3217] font-bold">0{{ $index + 1 }}</h1>
+            <div class="w-full text-center p-10 bg-white rounded shadow-md" data-aos="zoom-in-up"
+                data-aos-duration="1200">
+                <h1 class="text-[18px] text-[#FF3217] font-bold">
+                    {{ $index + 1 < 10 ? '0' . ($index + 1) : $index + 1 }}
+                </h1>
                 <p class="text-sm mt-2">{{ $item->title[app()->getLocale()] }}</p>
             </div>
         @endforeach

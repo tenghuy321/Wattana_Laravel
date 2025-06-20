@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('css')
     <style>
         .swiper {
@@ -73,4 +73,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}
