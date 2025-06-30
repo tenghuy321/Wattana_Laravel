@@ -100,13 +100,13 @@
         <ul class="flex flex-col w-full items-start gap-4 xl:gap-10 p-4">
             <li>
                 <a href="{{ route('home') }}"
-                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
+                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link {{ Route::currentRouteName() === 'home' ? 'font-[600] text-[#FF3217]' : '' }}">
                     {{ __("messages.home") }}
                 </a>
             </li>
             <li>
                 <a href="{{ route('about-us') }}"
-                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link">
+                    class="block px-2 py-2 text-[16px] xl:text-[18px] text-[#000] drawer-link {{ Route::currentRouteName() === 'about-us' ? 'font-[600] text-[#FF3217]' : '' }}">
                     {{ __("messages.about_us") }}
                 </a>
             </li>
