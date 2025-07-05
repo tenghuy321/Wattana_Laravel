@@ -84,7 +84,7 @@
             <img src="{{ asset($nav->image) }}" alt="" class="p-0 w-64 h-auto">
         </div>
 
-        <div class="w-full h-[50vh] md:h-[85vh] lg:h-[100vh] relative z-10">
+        <div class="w-full h-[40vh] md:h-[85vh] lg:h-[100vh] relative z-10">
             <div class="swiper homeSwiper h-full">
                 <div class="swiper-wrapper h-full ">
                     @foreach ($heroBanner as $item)
