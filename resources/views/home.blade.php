@@ -84,11 +84,11 @@
             <img src="{{ asset($nav->image) }}" alt="" class="p-0 w-64 h-auto">
         </div>
 
-        <div class="w-full h-[40vh] sm:h-[50vh] md:h-[85vh] relative z-10">
+        <div class="w-full h-[50vh] md:h-[85vh] lg:h-[100vh] relative z-10">
             <div class="swiper homeSwiper h-full">
-                <div class="swiper-wrapper h-full">
+                <div class="swiper-wrapper h-full ">
                     @foreach ($heroBanner as $item)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide bg-white">
                             <img src="{{ asset($item->image) }}" alt="" class="w-full h-full object-cover"
                                 loading="eager">
                         </div>
@@ -115,181 +115,157 @@
 
     <x-products :product_categories="$product_categories" :productTitle="$productTitle" :productImages="$productImages" :service_product_unique="$service_product_unique" :product_unique="$product_unique" />
 
-    {{-- <div class='relative w-full min-h-screen bg-center bg-cover flex flex-col items-center justify-center overflow-hidden mt-32 md:m-5'>
-        <h1 class='text-[20px] md:text-[25px] text-[#FF3217] font-[600] tracking-wider'>{{ __('messages.customization') }}</h1>
-        <div
-            class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center mt-10 max-w-7xl mx-auto lg:px-4'>
-            <div data-aos="fade-right" data-aos-duration="1200"
-                class="flex flex-col space-y-4 justify-center items-center lg:items-start order-2 lg:order-none mt-10 sm:mt-10 mb-0 sm:mb-20 lg:mb-0 lg:mt-0 px-4">
-                <img id="preview1" src="{{ asset('assets/images/default1.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] ml-0 lg:ml-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
-                <img id="preview2" src="{{ asset('assets/images/default2.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] object-cover rounded-md hover:scale-110 transition-all duration-500" />
-                <img id="preview3" src="{{ asset('assets/images/default3.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] ml-0 lg:ml-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
-            </div>
-            <div data-aos="fade-up" data-aos-duration="1200"
-                class="relative w-full max-w-5xl mx-auto mt-5 lg:mt-10 col-span-1 sm:col-span-2 lg:col-span-1 order-1 lg:order-none px-2">
-                <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-full h-auto" />
 
-                <!-- Living Room -->
-                <div class="absolute left-[2%] top-[40%] sm:left-[6%] sm:top-[45%] md:left-[6%] md:top-[45%] lg:-left-[5%] lg:top-[40%] cursor-pointer"
-                    onclick="showRoomImages('living-room')">
-                    <div class="relative flex space-x-2 items-center">
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Space') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- Glass -->
-                <div class="absolute left-[20%] top-[70%] sm:left-[25%] sm:top-[70%] md:left-[30%] md:top-[70%] lg:left-[17%] lg:top-[68%] cursor-pointer"
-                    onclick="showRoomImages('glass')">
-                    <div class="relative flex space-x-2 items-center">
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Door glass') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- Kitchen -->
-                <div class="absolute left-[6%] top-[10%] sm:left-[5%] sm:top-[18%] md:left-[5%] md:top-[20%] lg:left-[-5%] lg:top-[14%] cursor-pointer"
-                    onclick="showRoomImages('kitchen')">
-                    <div class="relative flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 items-center">
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Kitchen Space') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- wardrobe -->
-                <div class="absolute left-[38%] top-[1%] sm:left-[42%] sm:top-[6%] md:left-[42%] md:top-[6%] lg:left-[40%] lg:top-[-5%] cursor-pointer"
-                    onclick="showRoomImages('wardrobe')">
-                    <div class="relative flex flex-col space-y-2 items-center">
-                        <span
-                            class="bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Wardrobe') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- mirror -->
-                <div class="absolute left-[25%] top-[16%] sm:left-[35%] sm:top-[15%] md:left-[35%] md:top-[15%] lg:left-[32%] lg:top-[10%] cursor-pointer"
-                    onclick="showRoomImages('mirror')">
-                    <div class="relative flex flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 items-center">
-                        <span
-                            class="bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Mirror') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- Living Room Cabnet -->
-                <div class="absolute left-[20%] top-[50%] sm:left-[30%] sm:top-[48%] md:left-[30%] md:top-[50%] lg:left-[15%] lg:top-[48%] cursor-pointer"
-                    onclick="showRoomImages('living-room-cabnet')">
-                    <div class="relative flex space-x-2 items-center">
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Cabnet') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- Bathroom Space -->
-                <div class="absolute left-[50%] top-[10%] sm:left-[50%] sm:top-[13%] md:left-[50%] md:top-[15%] lg:left-[50%] lg:top-[8%] xl:left-[50%] xl:top-[10%] cursor-pointer"
-                    onclick="showRoomImages('bathroom-space')">
-                    <div class="relative flex space-x-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Bathroom Space') }}</span>
-                    </div>
-                </div>
-
-                <!-- Study Space -->
-                <div class="absolute left-[63%] top-[18%] sm:left-[65%] sm:top-[20%] md:left-[65%] md:top-[20%] lg:left-[65%] lg:top-[18%] cursor-pointer"
-                    onclick="showRoomImages('stady-space')">
-                    <div class="relative flex space-x-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Study Space') }}</span>
-                    </div>
-                </div>
-
-                <!-- Book Cabinet -->
-                <div class="absolute left-[75%] top-[25%] sm:left-[80%] sm:top-[25%] md:left-[80%] md:top-[25%] lg:left-[80%] lg:top-[26%] xl:left-[80%] xl:top-[25%] cursor-pointer"
-                    onclick="showRoomImages('book-cabinet')">
-                    <div class="relative flex space-x-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Book Cabinet') }}</span>
-                    </div>
-                </div>
-
-                <!-- Glass Fix -->
-                <div class="absolute left-[82%] top-[35%] sm:left-[88%] sm:top-[35%] md:left-[88%] md:top-[35%] lg:left-[88%] lg:top-[35%] cursor-pointer"
-                    onclick="showRoomImages('glass-fix')">
-                    <div class="relative flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Glass Fix') }}</span>
-                    </div>
-                </div>
-
-                <!-- Balcony -->
-                <div class="absolute left-[20%] top-[80%] sm:left-[30%] sm:top-[80%] md:left-[30%] md:top-[80%] lg:left-[20%] lg:top-[78%] cursor-pointer"
-                    onclick="showRoomImages('balcony')">
-                    <div class="relative flex space-x-2 items-center">
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Balcony Space') }}</span>
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                    </div>
-                </div>
-
-                <!-- Railing  -->
-                <div class="absolute left-[50%] top-[78%] sm:left-[50%] sm:top-[82%] md:left-[50%] md:top-[82%] lg:left-[50%] lg:top-[78%] cursor-pointer"
-                    onclick="showRoomImages('railing')">
-                    <div class="relative flex flex-col space-y-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Railing') }}</span>
-                    </div>
-                </div>
-
-                <!-- Glass Windows -->
-                <div class="absolute left-[62%] top-[45%] sm:left-[60%] sm:top-[50%] md:left-[65%] md:top-[45%] lg:left-[50%] lg:top-[50%] xl:left-[55%] xl:top-[48%] cursor-pointer"
-                    onclick="showRoomImages('glass-window')">
-                    <div class="relative flex flex-col space-y-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="sm:ml-10 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Glass Windows') }}</span>
-                    </div>
-                </div>
-
-                <!-- Bedroom Space -->
-                <div class="absolute left-[55%] top-[35%] sm:left-[60%] sm:top-[35%] md:left-[60%] md:top-[35%] lg:left-[55%] lg:top-[35%] cursor-pointer"
-                    onclick="showRoomImages('bedroom')">
-                    <div class="relative flex space-x-2 items-center">
-                        <div class="w-1 h-1 rotate-45 bg-[#FF3217]"></div>
-                        <span
-                            class="ml-2 bg-white text-[8px] xl:text-[10px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Bedroom Space') }}</span>
-                    </div>
-                </div>
-            </div>
-
-            <div data-aos="fade-left" data-aos-duration="1200"
-                class="flex flex-col space-y-4 justify-center items-center lg:items-end order-3 lg:order-none mt-4 sm:mt-10 mb-20 lg:mb-0 lg:mt-0 px-4">
-                <img id="preview4" src="{{ asset('assets/images/default4.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] mr-0 lg:mr-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
-                <img id="preview5" src="{{ asset('assets/images/default5.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] object-cover rounded-md hover:scale-110 transition-all duration-500" />
-                <img id="preview6" src="{{ asset('assets/images/default6.jpg') }}" alt="Room Preview"
-                    class="w-full md:w-[80%] lg:w-[200px] h-[150px] lg:h-[120px] mr-0 lg:mr-6 object-cover rounded-md hover:scale-110 transition-all duration-500" />
-            </div>
-        </div>
-    </div> --}}
 
     <x-our-service :sub_service="$sub_service" :service_title="$service_title" />
 
-    <div class="flex items-center justify-center px-4" data-aos="fade-up" data-aos-duration="1400">
+    {{-- <div class="flex items-center justify-center px-4" data-aos="fade-up" data-aos-duration="1400">
         <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-[80%] md:w-1/2 h-auto" />
+    </div> --}}
+
+    <div data-aos="fade-up" data-aos-duration="1200" class="relative w-full max-w-5xl mx-auto mt-5 lg:mt-10 px-2">
+        <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-full h-auto" />
+
+        <!-- Living Room -->
+        <div
+            class="absolute left-[2%] top-[40%] sm:left-[6%] sm:top-[45%] md:left-[6%] md:top-[45%] lg:left-[5%] lg:top-[45%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <span class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Space') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- Glass -->
+        <div
+            class="absolute left-[20%] top-[70%] sm:left-[25%] sm:top-[70%] md:left-[30%] md:top-[68%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Door glass') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- Kitchen -->
+        <div
+            class="absolute left-[6%] top-[10%] sm:left-[5%] sm:top-[18%] md:left-[5%] md:top-[15%] lg:left-[5%] lg:top-[20%] cursor-pointer">
+            <div class="relative flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 items-center">
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Kitchen Space') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- wardrobe -->
+        <div
+            class="absolute left-[38%] top-[1%] sm:left-[42%] sm:top-[6%] md:left-[42%] md:top-[6%] lg:left-[40%] lg:top-[1%] cursor-pointer">
+            <div class="relative flex flex-col space-y-2 items-center">
+                <span
+                    class="bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Wardrobe') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- mirror -->
+        <div
+            class="absolute left-[25%] top-[16%] sm:left-[35%] sm:top-[15%] md:left-[35%] md:top-[15%] lg:left-[34%] lg:top-[14%] cursor-pointer">
+            <div class="relative flex flex-row sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2 items-center">
+                <span
+                    class="bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Mirror') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- Living Room Cabnet -->
+        <div
+            class="absolute left-[20%] top-[50%] sm:left-[30%] sm:top-[48%] md:left-[25%] md:top-[50%] lg:left-[30%] lg:top-[48%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Cabnet') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- Bathroom Space -->
+        <div
+            class="absolute left-[65%] top-[8%] sm:left-[65%] sm:top-[8%] md:top-[8%] md:left-[65%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Bathroom Space') }}</span>
+            </div>
+        </div>
+
+        <!-- Study Space -->
+        <div
+            class="absolute left-[63%] top-[18%] sm:left-[67%] sm:top-[20%] md:left-[65%] md:top-[20%] lg:left-[70%] lg:top-[25%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Study Space') }}</span>
+            </div>
+        </div>
+
+        <!-- Book Cabinet -->
+        <div
+            class="absolute left-[75%] top-[25%] sm:left-[80%] sm:top-[25%] md:left-[80%] md:top-[25%] lg:left-[84%] lg:top-[25%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Book Cabinet') }}</span>
+            </div>
+        </div>
+
+        <!-- Glass Fix -->
+        <div
+            class="absolute left-[82%] top-[35%] sm:left-[88%] sm:top-[35%] md:left-[88%] md:top-[35%] lg:left-[88%] lg:top-[35%] cursor-pointer">
+            <div class="relative flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Glass Fix') }}</span>
+            </div>
+        </div>
+
+        <!-- Balcony -->
+        <div
+            class="absolute left-[20%] top-[82%] sm:left-[30%] sm:top-[80%] md:left-[30%] md:top-[80%] lg:left-[25%] lg:top-[82%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Balcony Space') }}</span>
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+            </div>
+        </div>
+
+        <!-- Railing  -->
+        <div
+            class="absolute left-[50%] top-[78%] sm:left-[50%] sm:top-[82%] md:left-[50%] md:top-[82%] lg:left-[50%] lg:top-[82%] cursor-pointer">
+            <div class="relative flex flex-col space-y-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Railing') }}</span>
+            </div>
+        </div>
+
+        <!-- Glass Windows -->
+        <div
+            class="absolute left-[62%] top-[47%] sm:left-[60%] sm:top-[50%] md:left-[60%] md:top-[48%] cursor-pointer">
+            <div class="relative flex flex-col space-y-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="sm:ml-10 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Glass Windows') }}</span>
+            </div>
+        </div>
+
+        <!-- Bedroom Space -->
+        <div
+            class="absolute left-[55%] top-[35%] sm:left-[60%] sm:top-[35%] md:left-[60%] md:top-[35%] lg:left-[55%] lg:top-[35%] cursor-pointer">
+            <div class="relative flex space-x-2 items-center">
+                <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Bedroom Space') }}</span>
+            </div>
+        </div>
     </div>
+
     <x-our-client :service_client="$service_client" :clients="$clients" />
     <x-contact :contact="$contact" />
 @endsection
