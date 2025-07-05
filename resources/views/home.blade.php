@@ -123,21 +123,21 @@
         <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-[80%] md:w-1/2 h-auto" />
     </div> --}}
 
-    <div data-aos="fade-up" data-aos-duration="1200" class="relative w-full max-w-5xl mx-auto mt-5 lg:mt-10 px-2">
+    <div data-aos="fade-up" data-aos-duration="1200"
+        class="relative w-full max-w-5xl mx-auto mt-5 lg:mt-10 px-2">
         <img src="{{ asset('assets/images/customization.png') }}" alt="3D Floor Plan" class="w-full h-auto" />
 
         <!-- Living Room -->
-        <div
-            class="absolute left-[2%] top-[40%] sm:left-[6%] sm:top-[45%] md:left-[6%] md:top-[45%] lg:left-[5%] lg:top-[45%] cursor-pointer">
+        <div class="absolute left-[2%] top-[40%] sm:left-[6%] sm:top-[45%] md:left-[6%] md:top-[45%] lg:left-[5%] lg:top-[45%] cursor-pointer">
             <div class="relative flex space-x-2 items-center">
-                <span class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Space') }}</span>
+                <span
+                    class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Living Room Space') }}</span>
                 <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
             </div>
         </div>
 
         <!-- Glass -->
-        <div
-            class="absolute left-[20%] top-[70%] sm:left-[25%] sm:top-[70%] md:left-[30%] md:top-[68%] cursor-pointer">
+        <div class="absolute left-[20%] top-[70%] sm:left-[25%] sm:top-[70%] md:left-[30%] md:top-[68%] cursor-pointer">
             <div class="relative flex space-x-2 items-center">
                 <span
                     class="ml-2 bg-white text-[8px] md:text-[12px] px-2 py-1 rounded shadow whitespace-nowrap">{{ __('messages.Door glass') }}</span>
@@ -175,6 +175,9 @@
             </div>
         </div>
 
+
+
+
         <!-- Living Room Cabnet -->
         <div
             class="absolute left-[20%] top-[50%] sm:left-[30%] sm:top-[48%] md:left-[25%] md:top-[50%] lg:left-[30%] lg:top-[48%] cursor-pointer">
@@ -186,8 +189,7 @@
         </div>
 
         <!-- Bathroom Space -->
-        <div
-            class="absolute left-[65%] top-[8%] sm:left-[65%] sm:top-[8%] md:top-[8%] md:left-[65%] cursor-pointer">
+        <div class="absolute left-[42%] top-[18%] sm:left-[65%] sm:top-[8%] md:top-[17%] md:left-[43%] cursor-pointer">
             <div class="relative flex space-x-2 items-center">
                 <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
                 <span
@@ -197,7 +199,7 @@
 
         <!-- Study Space -->
         <div
-            class="absolute left-[63%] top-[18%] sm:left-[67%] sm:top-[20%] md:left-[65%] md:top-[20%] lg:left-[70%] lg:top-[25%] cursor-pointer">
+            class="absolute left-[65%] top-[18%] sm:left-[67%] sm:top-[20%] md:left-[65%] md:top-[20%] lg:left-[70%] lg:top-[25%] cursor-pointer">
             <div class="relative flex space-x-2 items-center">
                 <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
                 <span
@@ -246,8 +248,7 @@
         </div>
 
         <!-- Glass Windows -->
-        <div
-            class="absolute left-[62%] top-[47%] sm:left-[60%] sm:top-[50%] md:left-[60%] md:top-[48%] cursor-pointer">
+        <div class="absolute left-[62%] top-[47%] sm:left-[60%] sm:top-[50%] md:left-[60%] md:top-[48%] cursor-pointer">
             <div class="relative flex flex-col space-y-2 items-center">
                 <div class="w-1 h-1 md:w-2 md:h-2 rotate-45 bg-[#FF3217]"></div>
                 <span
@@ -265,6 +266,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
     <x-our-client :service_client="$service_client" :clients="$clients" />
     <x-contact :contact="$contact" />
